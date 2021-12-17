@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git/presentation/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue, textTheme: lightTheme.textTheme),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -40,25 +40,29 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: lightTheme.scaffoldBackgroundColor,
       appBar: AppBar(
+        backgroundColor: lightTheme.bottomAppBarColor,
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline3,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
+        backgroundColor: lightTheme.bottomAppBarColor,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
