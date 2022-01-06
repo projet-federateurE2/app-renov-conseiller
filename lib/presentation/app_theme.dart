@@ -60,4 +60,9 @@ abstract class AppColors {
   static const Color grey3 = Color(0xFF707070);
   static const Color accentColor = Color(0xFF02C780);
   static const Color darkAccentColor = Color(0xFF27453A);
+  // Light theme
+  static const Color primaryColorLight = Color(0xFF4CD8AD);
+  static const Color  accentGreen = Color(0xFFE2F9F2); // Sous ton
+  static const Color secondaryColorLight = Color(0xFF052948);
+
 }
