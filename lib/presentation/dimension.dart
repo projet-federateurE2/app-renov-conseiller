@@ -6,6 +6,16 @@ abstract class AppPadding {
   static const padding3 = EdgeInsets.all(12.0);
   static const padding4 = EdgeInsets.all(16.0);
   static const padding5 = EdgeInsets.all(20.0);
+  static const leftPadding1 = EdgeInsets.only(left: 4.0);
+  static const leftPadding2 = EdgeInsets.only(left: 8.0);
+  static const leftPadding3 = EdgeInsets.only(left: 12.0);
+  static const leftPadding4 = EdgeInsets.only(left: 16.0);
+  static const leftPadding5 = EdgeInsets.only(left: 20.0);
+  static const rightPadding1 = EdgeInsets.only(right: 4.0);
+  static const rightPadding2 = EdgeInsets.only(right: 8.0);
+  static const rightPadding3 = EdgeInsets.only(right: 12.0);
+  static const rightPadding4 = EdgeInsets.only(right: 16.0);
+  static const rightPadding5 = EdgeInsets.only(right: 20.0);
 }
 
 abstract class AppRadius {

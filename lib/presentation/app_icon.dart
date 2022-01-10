@@ -5,7 +5,7 @@ import 'package:git/presentation/dimension.dart';
 class AppIcon extends StatelessWidget {
   final BoxShape boxShape;
   final Function()? onPressed;
-  final IconData? icon;
+  final IconData icon;
 
   AppIcon(
       {this.onPressed, this.boxShape = BoxShape.rectangle, required this.icon});
