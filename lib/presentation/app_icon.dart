@@ -15,8 +15,8 @@ class AppIcon extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: 100,
-        width: 100,
+        height: 80,
+        width: 80,
         padding: AppPadding.padding1,
         decoration: BoxDecoration(
             shape: boxShape,

@@ -22,7 +22,6 @@ class FabText extends StatelessWidget {
     if (textSide == TextSide.right) {
       return Container(
         width: 350,
-        height: 108,
         padding: AppPadding.padding1,
         child: Row(
           children: [
@@ -32,7 +31,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.leftPadding5,
                 child: Text(
                   text,
-                  style: activeTheme.textTheme.headline4,
+                  style: activeTheme.textTheme.headline5,
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -43,7 +42,6 @@ class FabText extends StatelessWidget {
     } else {
       return Container(
         width: 350,
-        height: 108,
         padding: AppPadding.padding1,
         child: Row(
           children: [
@@ -52,7 +50,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.rightPadding5,
                 child: Text(
                   text,
-                  style: activeTheme.textTheme.headline4,
+                  style: activeTheme.textTheme.headline5,
                   textAlign: TextAlign.right,
                 ),
               ),
