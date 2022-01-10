@@ -48,6 +48,7 @@ final darkTheme = ThemeData(
         color: AppColors.white,
         fontSize: 16),
   ),
+  primaryColor: AppColors.darkPrimaryColor,
 );
 
 final lightTheme = ThemeData(
@@ -95,6 +96,7 @@ final lightTheme = ThemeData(
         color: AppColors.lightSecondaryColor,
         fontSize: 16),
   ),
+  primaryColor: AppColors.lightPrimaryColor,
 );
 
 final activeTheme = lightTheme;
