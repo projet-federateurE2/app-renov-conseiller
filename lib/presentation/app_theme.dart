@@ -3,9 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 // Couleurs pas encore définies (c'est un copié/collé d'une autre application)
-final lightTheme = ThemeData(
-  bottomAppBarColor: AppColors.accentColor,
-  scaffoldBackgroundColor: AppColors.primaryBackground,
+final darkTheme = ThemeData(
+  bottomAppBarColor: AppColors.darkPrimaryColor,
+  scaffoldBackgroundColor: AppColors.darkPrimaryBackground,
   textTheme: const TextTheme(
     headline1: TextStyle(
         fontFamily: 'Lexend',
@@ -48,21 +48,71 @@ final lightTheme = ThemeData(
         color: AppColors.white,
         fontSize: 16),
   ),
+  primaryColor: AppColors.darkPrimaryColor,
 );
+
+final lightTheme = ThemeData(
+  bottomAppBarColor: AppColors.lightPrimaryColor,
+  scaffoldBackgroundColor: AppColors.white,
+  textTheme: const TextTheme(
+    headline1: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w500,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 60),
+    headline2: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w600,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 48),
+    headline3: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w600,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 40),
+    headline4: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w500,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 30),
+    headline5: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w600,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 24),
+    headline6: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w600,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 24),
+    subtitle1: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w500,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 12),
+    bodyText1: TextStyle(
+        fontFamily: 'Lexend',
+        fontWeight: FontWeight.w500,
+        color: AppColors.lightSecondaryColor,
+        fontSize: 16),
+  ),
+  primaryColor: AppColors.lightPrimaryColor,
+);
+
+final activeTheme = lightTheme;
 
 // Couleurs des maquettes
 abstract class AppColors {
-  static const Color primaryBackground = Color(0xFF343A43);
-  static const Color secondaryBackground = Color(0xFF343A43);
+  static const Color darkPrimaryBackground = Color(0xFF343A43);
+  static const Color darkSecondaryBackground = Color(0xFF343A43);
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey1 = Color(0xFFC4C4C4);
   static const Color grey2 = Color(0xFF7F8287);
   static const Color grey3 = Color(0xFF707070);
-  static const Color accentColor = Color(0xFF02C780);
-  static const Color darkAccentColor = Color(0xFF27453A);
+  static const Color darkPrimaryColor = Color(0xFF02C780);
+  static const Color darkSecondaryColor = Color(0xFF27453A);
   // Light theme
-  static const Color primaryColorLight = Color(0xFF4CD8AD);
-  static const Color  accentGreen = Color(0xFFE2F9F2); // Sous ton
-  static const Color secondaryColorLight = Color(0xFF052948);
-
+  static const Color lightPrimaryColor = Color(0xFF4CD8AD);
+  static const Color lightPrimaryColorLight = Color(0xFFE2F9F2);
+  static const Color lightSecondaryColor = Color(0xFF052948);
 }
