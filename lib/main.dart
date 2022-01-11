@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:git/presentation/app_button_empty.dart';
 import 'package:git/presentation/app_button_full.dart';
-import 'package:git/presentation/app_icon.dart';
 import 'package:git/presentation/app_theme.dart';
 
 void main() {
@@ -52,7 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            AppButton(text: "Modifier les travaux"),
+            AppButtonFull(text: "Modifier les travaux"),
+            SizedBox(height: 10,),
+            AppButtonEmpty(text: "Modifier les travaux"),
             const Text(
               'You have pushed the button this many times:',
               style: lightTheme.bodyText1,

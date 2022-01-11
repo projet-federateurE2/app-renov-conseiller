@@ -163,6 +163,13 @@ abstract class lightTheme {
     color: AppColors.white,
     fontSize: 20,
   );
+
+  static const TextStyle buttonEmpty = TextStyle(
+    fontFamily: 'Lexend',
+    fontWeight: FontWeight.w600,
+    color: AppColors.lightPrimaryColor,
+    fontSize: 20,
+  );
 }
 
 // Couleurs des maquettes

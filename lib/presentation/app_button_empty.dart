@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:git/presentation/app_theme.dart';
 
-class AppButtonFull extends StatelessWidget {
+class AppButtonEmpty extends StatelessWidget {
   final BoxShape boxShape;
   final Function()? onPressed;
   final String text;
 
-  AppButtonFull(
+  AppButtonEmpty(
       {this.onPressed, this.boxShape = BoxShape.rectangle, required this.text});
 
   @override
@@ -17,13 +17,13 @@ class AppButtonFull extends StatelessWidget {
         width: 348,
         height: 54,
         decoration: BoxDecoration(
+            border: Border.all(color: AppColors.lightPrimaryColor,width: 3.0),
             shape: boxShape,
-            borderRadius: BorderRadius.circular(20),
-            color: lightTheme.primaryColor),
+            borderRadius: BorderRadius.circular(20),),
         child: Center(
           child: Text(
             text,
-            style: lightTheme.buttonFull,
+            style: lightTheme.buttonEmpty,
           ),
         ),
       ),
