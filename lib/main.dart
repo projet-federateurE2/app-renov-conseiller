@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:git/presentation/app_icon.dart';
 import 'package:git/presentation/app_theme.dart';
+import 'package:git/presentation/app_titre_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,20 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: activeTheme.bottomAppBarColor,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-              style: activeTheme.textTheme.bodyText1,
-            ),
-            Text(
-              '$_counter',
-              style: activeTheme.textTheme.headline3,
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          AppTitrePage(titre1: 'Catégories de travaux'),
+          AppTitrePage(titre1: 'Catégories de travaux',titre2: 'Isolation',),
+          AppTitrePage(titre1: 'Catégories de travaux',titre2: 'Isolation', titre3: "Demende d'aide")
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
