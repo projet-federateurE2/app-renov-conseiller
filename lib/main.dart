@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:git/presentation/app_button.dart';
+import 'package:git/presentation/app_icon.dart';
 import 'package:git/presentation/app_theme.dart';
 
 void main() {
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.blue, textTheme: activeTheme.textTheme),
@@ -49,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            AppButton(text: "Modifier les travaux"),
             Text(
               'You have pushed the button this many times:',
               style: activeTheme.textTheme.bodyText1,
