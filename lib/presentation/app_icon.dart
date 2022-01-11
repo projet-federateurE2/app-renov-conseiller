@@ -21,7 +21,7 @@ class AppIcon extends StatelessWidget {
         decoration: BoxDecoration(
             shape: boxShape,
             borderRadius: BorderRadius.circular(20),
-            color: activeTheme.primaryColor),
+            color: lightTheme.primaryColor),
         child: Center(
           child: Icon(
             icon,

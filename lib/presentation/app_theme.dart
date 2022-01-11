@@ -51,6 +51,7 @@ final darkTheme = ThemeData(
   primaryColor: AppColors.darkPrimaryColor,
 );
 
+/*
 final lightTheme = ThemeData(
   bottomAppBarColor: AppColors.lightPrimaryColor,
   scaffoldBackgroundColor: AppColors.white,
@@ -97,9 +98,79 @@ final lightTheme = ThemeData(
         fontSize: 16),
   ),
   primaryColor: AppColors.lightPrimaryColor,
-);
+);*/
 
-final activeTheme = lightTheme;
+const activeTheme = lightTheme;
+
+// Thème clair
+abstract class lightTheme {
+
+  static const Color bottomAppBarColor = AppColors.lightPrimaryColor;
+  static const Color scaffoldBackgroundColor = AppColors.white;
+  static const Color primaryColor = AppColors.lightPrimaryColor;
+
+  static const TextStyle headline1 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 60);
+
+  static const TextStyle headline2 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w600,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 48);
+
+  static const TextStyle headline3 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w600,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 40);
+
+  static const TextStyle headline4 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 30);
+
+  static const TextStyle headline5 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w600,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 24);
+
+  static const TextStyle headline6 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w600,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 24);
+
+  static const TextStyle subtitle1 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 12);
+
+  static const TextStyle bodyText1 = TextStyle(
+      fontFamily: 'Lexend',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 16);
+
+  static const TextStyle buttonFull = TextStyle(
+    fontFamily: 'Lexend',
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+    fontSize: 20,
+  );
+
+  static const TextStyle buttonEmpty = TextStyle(
+    fontFamily: 'Lexend',
+    fontWeight: FontWeight.w600,
+    color: AppColors.lightPrimaryColor,
+    fontSize: 20,
+  );
+}
 
 // Couleurs des maquettes
 abstract class AppColors {
@@ -111,6 +182,7 @@ abstract class AppColors {
   static const Color grey3 = Color(0xFF707070);
   static const Color darkPrimaryColor = Color(0xFF02C780);
   static const Color darkSecondaryColor = Color(0xFF27453A);
+
   // Light theme
   static const Color lightPrimaryColor = Color(0xFF4CD8AD);
   static const Color lightPrimaryColorLight = Color(0xFFE2F9F2);
