@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:git/presentation/app_button.dart';
+import 'package:git/presentation/app_button_full.dart';
 import 'package:git/presentation/app_icon.dart';
 import 'package:git/presentation/app_theme.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue, textTheme: activeTheme.textTheme),
+          primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -43,9 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: activeTheme.scaffoldBackgroundColor,
+      backgroundColor: lightTheme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: activeTheme.bottomAppBarColor,
+        backgroundColor: lightTheme.bottomAppBarColor,
         title: Text(widget.title),
       ),
       body: Center(
@@ -53,20 +53,20 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             AppButton(text: "Modifier les travaux"),
-            Text(
+            const Text(
               'You have pushed the button this many times:',
-              style: activeTheme.textTheme.bodyText1,
+              style: lightTheme.bodyText1,
             ),
             Text(
               '$_counter',
-              style: activeTheme.textTheme.headline3,
+              style: lightTheme.headline3,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        backgroundColor: activeTheme.bottomAppBarColor,
+        backgroundColor: lightTheme.bottomAppBarColor,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

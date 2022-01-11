@@ -29,26 +29,5 @@ class AppButton extends StatelessWidget {
         ),
       ),
     );
-    /*
-    return Container(
-      width: 348,
-      height: 54,
-      decoration: BoxDecoration(
-          shape: boxShape,
-          borderRadius: BorderRadius.circular(20),
-          color: lightTheme.primaryColor),
-      child: Center(
-        child: ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.transparent),
-          ),
-          onPressed: () {},
-          child: Text(
-            text,
-            style: lightTheme.buttonFull,
-          ),
-        ),
-      ),
-    );*/
   }
 }
