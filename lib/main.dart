@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:git/presentation/app_button_empty.dart';
 import 'package:git/presentation/app_button_full.dart';
 import 'package:git/presentation/app_theme.dart';
+import 'package:git/presentation/app_titre_page.dart';
 
 void main() {
   runApp(const MyApp());
