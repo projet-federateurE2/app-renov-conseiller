@@ -1,32 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:git/presentation/app_theme.dart';
-import 'package:git/presentation/dimension.dart';
 
-class AppIcon extends StatelessWidget {
+class AppButtonFull extends StatelessWidget {
   final BoxShape boxShape;
   final Function()? onPressed;
-  final IconData? icon;
+  final String text;
 
-  AppIcon(
-      {this.onPressed, this.boxShape = BoxShape.rectangle, required this.icon});
+  AppButtonFull(
+      {this.onPressed, this.boxShape = BoxShape.rectangle, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
+    return TextButton(
+      onPressed: (){},
       child: Container(
-        height: 100,
-        width: 100,
-        padding: AppPadding.padding1,
+        width: 348,
+        height: 54,
         decoration: BoxDecoration(
             shape: boxShape,
             borderRadius: BorderRadius.circular(20),
             color: lightTheme.primaryColor),
         child: Center(
-          child: Icon(
-            icon,
-            size: 60,
-            color: AppColors.white,
+          child: Text(
+            text,
+            style: lightTheme.buttonFull,
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:git/presentation/app_icon.dart';
+import 'package:git/presentation/app_button_empty.dart';
+import 'package:git/presentation/app_button_full.dart';
 import 'package:git/presentation/app_theme.dart';
 import 'package:git/presentation/app_titre_page.dart';
 
@@ -13,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue, textTheme: activeTheme.textTheme),
+          primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -42,21 +44,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: activeTheme.scaffoldBackgroundColor,
+      backgroundColor: lightTheme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: activeTheme.bottomAppBarColor,
+        backgroundColor: lightTheme.bottomAppBarColor,
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          AppTitrePage(titre1: 'Catégories de travaux'),
-          AppTitrePage(titre1: 'Catégories de travaux',titre2: 'Isolation',),
-          AppTitrePage(titre1: 'Catégories de travaux',titre2: 'Isolation', titre3: "Demende d'aide")
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            AppButtonFull(text: "Modifier les travaux"),
+            SizedBox(height: 10,),
+            AppButtonEmpty(text: "Modifier les travaux"),
+            const Text(
+              'You have pushed the button this many times:',
+              style: lightTheme.bodyText1,
+            ),
+            Text(
+              '$_counter',
+              style: lightTheme.headline3,
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        backgroundColor: activeTheme.bottomAppBarColor,
+        backgroundColor: lightTheme.bottomAppBarColor,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
