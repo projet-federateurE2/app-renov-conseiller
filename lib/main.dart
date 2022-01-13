@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:git/background_green_wave.dart';
+import 'package:git/themes/app_theme.dart';
 import 'package:git/widgets/category_item.dart';
+import 'package:git/widgets/fab_text.dart';
+import 'package:git/widgets/text_side.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'App Renov Propriétaire',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(fontFamily: 'Lexend'),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -31,6 +35,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var categoryItems = [
+    const Icon(
+      Icons.arrow_back,
+      size: 28.0,
+    ),
+    const SizedBox(
+      height: 10,
+    ),
+    const Text(
+      "Catégorie de travaux",
+      textAlign: TextAlign.center,
+      style: lightTheme.headline1,
+      overflow: TextOverflow.clip,
+    ),
+    const SizedBox(
+      height: 40,
+    ),
     CategoryItem(
         title: "test",
         subtitle: "subtitle",
@@ -42,54 +62,48 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Stack(
-      children: [
-        BackgroundGreenWave(),
-
-      ],
-    );
-    /*
     return Scaffold(
-      backgroundColor: lightTheme.scaffoldBackgroundColor,
-      body: Center(
-        child: Row(children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Icon(Icons.arrow_back),
-                    Text(
-                      "test",
-                      style: lightTheme.headline1,
-                    ),
-                    Column(
-                      children: categoryItems,
-                    ),
-                  ],
-                ),
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          const BackgroundGreenWave(),
+          Container(
+            margin: EdgeInsets.fromLTRB(
+                MediaQuery.of(context).size.width / 3, 0, 0, 0),
+            height: MediaQuery.of(context).size.height,
+            child: const Center(
+              child: Text(
+                  "Sélectionner un élément pour voir ses détails",
+                style: lightTheme.headline1,
               ),
-              FabText(
-                  text: "Ajouter une nouvelle catégorie",
-                  textSide: TextSide.right,
-                  icon: Icons.add)
-            ],
+            ),
           ),
-          /*
-            Column(
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width / 3,
+            padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: categoryItems,
                 ),
-                FabText(text: "Ajouter une nouvelle catégorie", textSide: TextSide.right, icon: Icons.add)
-              ]
-            ),*/
-        ]),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                    child: FabText(
+                        text: "Ajouter une nouvelle catégorie",
+                        textSide: TextSide.right,
+                        icon: Icons.add),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-    );*/
+    );
   }
 }
