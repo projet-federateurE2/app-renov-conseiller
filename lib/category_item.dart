@@ -59,14 +59,14 @@ class _CategoryItemState extends State<CategoryItem> {
                   children: [
                     Text(
                       widget.title,
-                      style: activeTheme.textTheme.headline4,
+                      style: lightTheme.headline4,
                     ),
                     const SizedBox(
                       height: 4,
                     ),
                     Text(
                       widget.subtitle,
-                      style: activeTheme.textTheme.subtitle1,
+                      style: lightTheme.subtitle1,
                     ),
                   ],
                 ),

@@ -31,7 +31,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.leftPadding5,
                 child: Text(
                   text,
-                  style: activeTheme.textTheme.headline5,
+                  style: lightTheme.headline5,
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -50,7 +50,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.rightPadding5,
                 child: Text(
                   text,
-                  style: activeTheme.textTheme.headline5,
+                  style: lightTheme.headline5,
                   textAlign: TextAlign.right,
                 ),
               ),
