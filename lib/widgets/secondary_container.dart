@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_theme.dart';
+import '../themes/app_theme.dart';
 
 class SecondaryContainer extends StatelessWidget {
 

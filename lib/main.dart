@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:git/presentation/app_button_empty.dart';
-import 'package:git/presentation/app_button_full.dart';
-import 'package:git/presentation/app_theme.dart';
-import 'package:git/presentation/app_titre_page.dart';
+import 'package:git/background_green_wave.dart';
+import 'package:git/widgets/category_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          primarySwatch: Colors.blue),
+      title: 'App Renov Propriétaire',
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -33,46 +30,66 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  var categoryItems = [
+    CategoryItem(
+        title: "test",
+        subtitle: "subtitle",
+        icon: Icons.favorite,
+        selected: false),
+    CategoryItem(
+        title: "dazot", subtitle: "sub", icon: Icons.add, selected: false),
+  ];
 
   @override
   Widget build(BuildContext context) {
+
+    return Stack(
+      children: [
+        BackgroundGreenWave(),
+
+      ],
+    );
+    /*
     return Scaffold(
       backgroundColor: lightTheme.scaffoldBackgroundColor,
-      appBar: AppBar(
-        backgroundColor: lightTheme.bottomAppBarColor,
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            AppButtonFull(text: "Modifier les travaux"),
-            SizedBox(height: 10,),
-            AppButtonEmpty(text: "Modifier les travaux"),
-            const Text(
-              'You have pushed the button this many times:',
-              style: lightTheme.bodyText1,
-            ),
-            Text(
-              '$_counter',
-              style: lightTheme.headline3,
-            ),
-          ],
-        ),
+        child: Row(children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.arrow_back),
+                    Text(
+                      "test",
+                      style: lightTheme.headline1,
+                    ),
+                    Column(
+                      children: categoryItems,
+                    ),
+                  ],
+                ),
+              ),
+              FabText(
+                  text: "Ajouter une nouvelle catégorie",
+                  textSide: TextSide.right,
+                  icon: Icons.add)
+            ],
+          ),
+          /*
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: categoryItems,
+                ),
+                FabText(text: "Ajouter une nouvelle catégorie", textSide: TextSide.right, icon: Icons.add)
+              ]
+            ),*/
+        ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        backgroundColor: lightTheme.bottomAppBarColor,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+    );*/
   }
 }

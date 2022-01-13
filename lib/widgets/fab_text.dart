@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:git/presentation/app_icon.dart';
-import 'package:git/presentation/app_theme.dart';
-import 'package:git/presentation/dimension.dart';
-import 'package:git/presentation/text_side.dart';
+import 'package:git/widgets/app_icon.dart';
+import 'package:git/themes/app_theme.dart';
+import 'package:git/themes/dimension.dart';
+import 'package:git/widgets/text_side.dart';
 
 class FabText extends StatelessWidget {
   final String text;
