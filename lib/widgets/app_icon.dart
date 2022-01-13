@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:git/presentation/app_theme.dart';
-import 'package:git/presentation/dimension.dart';
+import 'package:git/themes/app_theme.dart';
+import 'package:git/themes/dimension.dart';
 
 class AppIcon extends StatelessWidget {
   final BoxShape boxShape;
