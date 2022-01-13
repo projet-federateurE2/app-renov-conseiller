@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../themes/app_theme.dart';
 
 class SecondaryContainer extends StatelessWidget {
-  const SecondaryContainer({Key? key}) :super(key:key);
+  const SecondaryContainer({Key? key}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {
