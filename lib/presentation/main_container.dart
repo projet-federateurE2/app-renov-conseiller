@@ -3,7 +3,7 @@ import 'app_theme.dart';
 
 class MainContainer extends StatelessWidget {
 
-  MainContainer();
+ const MainContainer({Key? key}) :super(key: key);
 
   @override
   Widget build(BuildContext context) {
