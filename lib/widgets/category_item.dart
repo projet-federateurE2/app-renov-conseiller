@@ -41,7 +41,7 @@ class _CategoryItemState extends State<CategoryItem> {
         widget.onPressed;
       },
       child: Container(
-        width: 400,
+        width: double.infinity,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: AppRadius.radius3,

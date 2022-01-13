@@ -51,55 +51,6 @@ final darkTheme = ThemeData(
   primaryColor: AppColors.darkPrimaryColor,
 );
 
-/*
-final lightTheme = ThemeData(
-  bottomAppBarColor: AppColors.lightPrimaryColor,
-  scaffoldBackgroundColor: AppColors.white,
-  textTheme: const TextTheme(
-    headline1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 60),
-    headline2: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 48),
-    headline3: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 40),
-    headline4: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 30),
-    headline5: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 24),
-    headline6: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 24),
-    subtitle1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 12),
-    bodyText1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.lightSecondaryColor,
-        fontSize: 16),
-  ),
-  primaryColor: AppColors.lightPrimaryColor,
-);*/
-
 const activeTheme = lightTheme;
 
 // Thème clair
@@ -110,62 +61,53 @@ abstract class lightTheme {
   static const Color primaryColor = AppColors.lightPrimaryColor;
 
   static const TextStyle headline1 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
       fontSize: 60);
 
   static const TextStyle headline2 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w600,
       color: AppColors.lightSecondaryColor,
       fontSize: 48);
 
   static const TextStyle headline3 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w600,
       color: AppColors.lightSecondaryColor,
       fontSize: 40);
 
   static const TextStyle headline4 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
       fontSize: 30);
 
   static const TextStyle headline5 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w600,
       color: AppColors.lightSecondaryColor,
       fontSize: 24);
 
   static const TextStyle headline6 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w600,
       color: AppColors.lightSecondaryColor,
       fontSize: 24);
 
   static const TextStyle subtitle1 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
       fontSize: 12);
 
   static const TextStyle bodyText1 = TextStyle(
-      fontFamily: 'Lexend',
       fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
       fontSize: 16);
 
   static const TextStyle buttonFull = TextStyle(
-    fontFamily: 'Lexend',
     fontWeight: FontWeight.w600,
     color: AppColors.white,
     fontSize: 20,
   );
 
   static const TextStyle buttonEmpty = TextStyle(
-    fontFamily: 'Lexend',
+    //fontFamily: 'Lexend',
     fontWeight: FontWeight.w600,
     color: AppColors.lightPrimaryColor,
     fontSize: 20,

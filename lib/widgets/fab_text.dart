@@ -43,6 +43,7 @@ class FabText extends StatelessWidget {
       return Container(
         width: 350,
         padding: AppPadding.padding1,
+        margin: const EdgeInsets.fromLTRB(16.0, 0, 0, 0),
         child: Row(
           children: [
             Expanded(
