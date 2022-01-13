@@ -7,8 +7,8 @@ class AppIcon extends StatelessWidget {
   final Function()? onPressed;
   final IconData icon;
 
-  AppIcon(
-      {this.onPressed, this.boxShape = BoxShape.rectangle, required this.icon});
+  const AppIcon(
+      {Key? key, this.onPressed, this.boxShape = BoxShape.rectangle, required this.icon}) : super(key:key);
 
   @override
   Widget build(BuildContext context) {

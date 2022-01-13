@@ -11,11 +11,11 @@ class FabText extends StatelessWidget {
   final Function()? onPressed;
   final IconData icon;
 
-  FabText(
-      {required this.text,
+  const FabText(
+      {Key? key, required this.text,
       required this.textSide,
       this.onPressed,
-      required this.icon});
+      required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

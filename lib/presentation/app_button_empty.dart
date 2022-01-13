@@ -6,8 +6,8 @@ class AppButtonEmpty extends StatelessWidget {
   final Function()? onPressed;
   final String text;
 
-  AppButtonEmpty(
-      {this.onPressed, this.boxShape = BoxShape.rectangle, required this.text});
+  const AppButtonEmpty(
+      {Key? key, this.onPressed, this.boxShape = BoxShape.rectangle, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
