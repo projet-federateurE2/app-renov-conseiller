@@ -11,8 +11,10 @@ class AppButtonEmpty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Theme.of(context).primaryColor;
     return TextButton(
       onPressed: (){},
+      //style: TextButton.styleFrom(),
       child: Container(
         width: 348,
         height: 54,
