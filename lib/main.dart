@@ -35,22 +35,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var categoryItems = [
-    const Icon(
-      Icons.arrow_back,
-      size: 28.0,
-    ),
-    const SizedBox(
-      height: 10,
-    ),
-    const Text(
-      "Catégorie de travaux",
-      textAlign: TextAlign.center,
-      style: lightTheme.headline1,
-      overflow: TextOverflow.clip,
-    ),
-    const SizedBox(
-      height: 40,
-    ),
     CategoryItem(
         title: "test",
         subtitle: "subtitle",
@@ -60,9 +44,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: "dazot", subtitle: "sub", icon: Icons.add, selected: false),
   ];
 
+  void addCategory() {
+    setState(() {
+      categoryItems.add(CategoryItem(
+          title: "test", subtitle: "test", icon: Icons.add, selected: false));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -73,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: MediaQuery.of(context).size.height,
             child: const Center(
               child: Text(
-                  "Sélectionner un élément pour voir ses détails",
+                "Sélectionner un élément pour voir ses détails",
                 style: lightTheme.headline1,
               ),
             ),
@@ -82,20 +74,56 @@ class _MyHomePageState extends State<MyHomePage> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width / 3,
             padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child:
+            Column(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: categoryItems,
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(
+                    Icons.arrow_back,
+                    size: 28.0,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "Catégorie de travaux",
+                  textAlign: TextAlign.center,
+                  style: lightTheme.headline1,
+                  overflow: TextOverflow.clip,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Expanded(
+                    child: ListView.builder (
+                        itemCount: categoryItems.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return categoryItems[index];
+                        }
+                    )
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: 260,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: AppColors.grey1,
+                      ),
+                      borderRadius: const BorderRadius.all(Radius.circular(1))
+                  ),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(16, 10, 0, 0),
                     child: FabText(
                         text: "Ajouter une nouvelle catégorie",
                         textSide: TextSide.right,
+                        onPressed: addCategory,
                         icon: Icons.add),
                   ),
                 ),
