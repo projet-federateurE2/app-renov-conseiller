@@ -91,9 +91,9 @@ abstract class lightTheme {
       fontSize: 24);
 
   static const TextStyle subtitle1 = TextStyle(
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w100,
       color: AppColors.lightSecondaryColor,
-      fontSize: 12);
+      fontSize: 17);
 
   static const TextStyle bodyText1 = TextStyle(
       fontWeight: FontWeight.w500,

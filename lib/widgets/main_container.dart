@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:git/themes/dimension.dart';
 import '../themes/app_theme.dart';
 
 class MainContainer extends StatelessWidget {
-
- const MainContainer({Key? key}) : super(key: key);
+  final Widget content;
+ const MainContainer({Key? key, required this.content, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-         height: double.infinity,
-         width: double.infinity,
-         color: AppColors.white,
-         padding: const EdgeInsets.fromLTRB(40, 128, 40, 32),
-         child: Container(
+    return  Container(
             height: 952,
             width: 1288,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(41),
+                borderRadius: AppRadius.radius3,
                 color: AppColors.white,
                 boxShadow: [
                   BoxShadow(
@@ -27,7 +23,7 @@ class MainContainer extends StatelessWidget {
                   ),
                 ],
                 ),
-      ),
-    );
+           child: content,
+      );
   }
 }
