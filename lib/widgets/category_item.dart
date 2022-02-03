@@ -11,12 +11,12 @@ class CategoryItem extends StatefulWidget {
   final IconData icon;
   final bool selected;
 
-  CategoryItem(
-      {required this.title,
+  const CategoryItem(
+      {Key? key, required this.title,
       required this.subtitle,
       this.onPressed,
       required this.icon,
-      required this.selected});
+      required this.selected}) : super(key:key);
 
   @override
   State<CategoryItem> createState() => _CategoryItemState();
