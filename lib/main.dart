@@ -8,6 +8,7 @@ import 'package:git/themes/dimension.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
+import 'package:git/widgets/main_container.dart';
 import 'package:git/widgets/text_side.dart';
 
 void main() {
