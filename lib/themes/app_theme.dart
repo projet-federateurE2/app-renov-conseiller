@@ -55,7 +55,6 @@ const activeTheme = lightTheme;
 
 // Thème clair
 abstract class lightTheme {
-
   static const Color bottomAppBarColor = AppColors.lightPrimaryColor;
   static const Color scaffoldBackgroundColor = AppColors.white;
   static const Color primaryColor = AppColors.lightPrimaryColor;

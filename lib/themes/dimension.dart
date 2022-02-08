@@ -56,7 +56,6 @@ abstract class AppMargin {
   static const topMargin4 = EdgeInsets.only(top: 16.0);
   static const topMargin5 = EdgeInsets.only(top: 20.0);
   static const topMargin8 = EdgeInsets.only(top: 32.0);
-
 }
 
 abstract class AppRadius {

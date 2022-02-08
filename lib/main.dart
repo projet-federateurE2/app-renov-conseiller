@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:git/background_green_wave.dart';
@@ -39,6 +41,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool selected = true;
 
+  String catName = "Isolation thermique";
+  String catPitch =
+      "Pour faire des économies d’énergie, et améliorer votre confort en hiver comme en été.";
+  String catDesc =
+      "L’isolation de votre maison est primordiale. Une maison mal isolée est sujette à de sérieuses pertes énergétiques engendrant une perte de confort et d’argent.";
+
   var categoryItems = [
     const CategoryItem(
         title: "test",
@@ -65,8 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           const BackgroundGreenWave(),
           Container(
-            padding:
-                const EdgeInsets.only(top: 32, right: 40, bottom: 228),
+            padding: const EdgeInsets.only(top: 32, right: 40, bottom: 228),
             margin: EdgeInsets.fromLTRB(
                 MediaQuery.of(context).size.width / 3, 0, 0, 0),
             height: MediaQuery.of(context).size.height,
@@ -74,8 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ? Center(
                     child: Container(
                       decoration: BoxDecoration(
-                          borderRadius: AppRadius.radius3,
-                          color: AppColors.white),
+                        borderRadius: AppRadius.radius3,
+                        color: AppColors.white,
+                      ),
                       child: MainContainer(
                         content: Container(
                           padding: const EdgeInsets.only(
@@ -86,19 +94,26 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   Container(
                                       margin: AppMargin.rightMargin2,
-                                      child: const AppIcon(icon: Icons.home)),
+                                      child: const AppIcon(
+                                        icon: Icons.home,
+                                      )),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                           padding: AppPadding.paddingHalf,
                                           margin: AppMargin.topMargin4,
-                                          child: const Text("Nom",
-                                              style: lightTheme.subtitle1)),
+                                          child: const Text(
+                                            "Nom",
+                                            style: lightTheme.subtitle1,
+                                          )),
                                       Container(
-                                       padding: AppPadding.topPadding1,
-                                        child: const Text("Isolation thermique",
-                                            style: lightTheme.headline1),
+                                        padding: AppPadding.topPadding1,
+                                        child: Text(
+                                          catName,
+                                          style: lightTheme.headline1,
+                                        ),
                                       ),
                                     ],
                                   )
@@ -106,23 +121,41 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               Container(
                                 margin: AppMargin.topMargin8,
+                                width: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text("Pitch", style: lightTheme.subtitle1,),
-                                    Text("Pour faire des économies d’énergie, et améliorer votre confort en hiver comme en été.",
-                                      style: lightTheme.headline6)
+                                  children: [
+                                    const Text(
+                                      "Pitch",
+                                      style: lightTheme.subtitle1,
+                                    ),
+                                    Container(
+                                      margin: AppMargin.topMargin2,
+                                      child: Text(
+                                        catPitch,
+                                        style: lightTheme.headline6,
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
                               Container(
                                 margin: AppMargin.topMargin8,
+                                width: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
-                                    Text("Description", style: lightTheme.subtitle1,),
-                                    Text("L’isolation de votre maison est primordiale. Une maison mal isolée est sujette à de sérieuses pertes énergétiques engendrant une perte de confort et d’argent.",
-                                      style: lightTheme.headline6)
+                                  children: [
+                                    const Text(
+                                      "Description",
+                                      style: lightTheme.subtitle1,
+                                    ),
+                                    Container(
+                                      margin: AppMargin.topMargin2,
+                                      child: Text(
+                                        catDesc,
+                                        style: lightTheme.headline6,
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
