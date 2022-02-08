@@ -41,7 +41,7 @@ final darkTheme = ThemeData(
         fontFamily: 'Lexend',
         fontWeight: FontWeight.w500,
         color: AppColors.grey3,
-        fontSize: 12),
+        fontSize: 17),
     bodyText1: TextStyle(
         fontFamily: 'Lexend',
         fontWeight: FontWeight.w500,
