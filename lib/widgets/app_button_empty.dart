@@ -7,14 +7,12 @@ class AppButtonEmpty extends StatelessWidget {
   final String text;
 
   const AppButtonEmpty(
-      {Key? key, this.onPressed, this.boxShape = BoxShape.rectangle, required this.text}) : super(key: key);
+      {Key? key, required this.onPressed, this.boxShape = BoxShape.rectangle, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    //Theme.of(context).primaryColor;
     return TextButton(
-      onPressed: (){},
-      //style: TextButton.styleFrom(),
+      onPressed: onPressed,
       child: Container(
         width: 348,
         height: 54,
