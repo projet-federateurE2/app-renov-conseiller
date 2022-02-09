@@ -49,12 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var categoryItems = [
     const CategoryItem(
-        title: "test",
-        subtitle: "subtitle",
+        title: "Isolation thermique",
+        subtitle: "Contient 4 sous-catégorie",
         icon: Icons.favorite,
-        selected: false),
+        selected: true),
     const CategoryItem(
-        title: "dazot", subtitle: "sub", icon: Icons.add, selected: false),
+        title: "Chauffage", subtitle: "Contient 4 sous-catégorie", icon: Icons.add, selected: false),
   ];
 
   void addCategory() {
