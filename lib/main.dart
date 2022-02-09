@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:git/background_green_wave.dart';
+import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/widgets/app_icon.dart';
@@ -10,6 +10,8 @@ import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/main_container.dart';
 import 'package:git/widgets/text_side.dart';
+
+import 'create.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,17 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
     const CategoryItem(
         title: "Isolation thermique",
         subtitle: "Contient 4 sous-catégorie",
-        icon: Icons.favorite,
+        icon: Icons.home,
         selected: true),
     const CategoryItem(
-        title: "Chauffage", subtitle: "Contient 4 sous-catégorie", icon: Icons.add, selected: false),
+        title: "Chauffage", subtitle: "Contient 4 sous-catégorie", icon: Icons.hot_tub, selected: false),
   ];
 
   void addCategory() {
-    setState(() {
-      categoryItems.add(const CategoryItem(
-          title: "test", subtitle: "test", icon: Icons.add, selected: false));
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const CreateCategory()),
+    );
   }
 
   @override
