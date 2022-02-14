@@ -2,55 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-// Couleurs pas encore définies (c'est un copié/collé d'une autre application)
-final darkTheme = ThemeData(
-  bottomAppBarColor: AppColors.darkPrimaryColor,
-  scaffoldBackgroundColor: AppColors.darkPrimaryBackground,
-  textTheme: const TextTheme(
-    headline1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.grey2,
-        fontSize: 60),
-    headline2: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.white,
-        fontSize: 48),
-    headline3: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.white,
-        fontSize: 40),
-    headline4: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.white,
-        fontSize: 30),
-    headline5: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.white,
-        fontSize: 24),
-    headline6: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w600,
-        color: AppColors.grey2,
-        fontSize: 24),
-    subtitle1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.grey3,
-        fontSize: 17),
-    bodyText1: TextStyle(
-        fontFamily: 'Lexend',
-        fontWeight: FontWeight.w500,
-        color: AppColors.white,
-        fontSize: 16),
-  ),
-  primaryColor: AppColors.darkPrimaryColor,
-);
-
 const activeTheme = lightTheme;
 
 // Thème clair
@@ -60,54 +11,63 @@ abstract class lightTheme {
   static const Color primaryColor = AppColors.lightPrimaryColor;
 
   static const TextStyle headline1 = TextStyle(
-      fontWeight: FontWeight.w500,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
       color: AppColors.lightSecondaryColor,
-      fontSize: 60);
+      fontSize: 32);
 
   static const TextStyle headline2 = TextStyle(
-      fontWeight: FontWeight.w600,
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
-      fontSize: 48);
+      fontSize: 27);
 
   static const TextStyle headline3 = TextStyle(
+      fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
-      color: AppColors.lightSecondaryColor,
-      fontSize: 40);
-
-  static const TextStyle headline4 = TextStyle(
-      fontWeight: FontWeight.w500,
-      color: AppColors.lightSecondaryColor,
-      fontSize: 30);
-
-  static const TextStyle headline5 = TextStyle(
-      fontWeight: FontWeight.w600,
-      color: AppColors.lightSecondaryColor,
-      fontSize: 24);
-
-  static const TextStyle headline6 = TextStyle(
-      fontWeight: FontWeight.w600,
-      color: AppColors.lightSecondaryColor,
-      fontSize: 24);
-
-  static const TextStyle subtitle1 = TextStyle(
-      fontWeight: FontWeight.w100,
-      color: AppColors.lightSecondaryColor,
-      fontSize: 17);
-
-  static const TextStyle bodyText1 = TextStyle(
-      fontWeight: FontWeight.w500,
       color: AppColors.lightSecondaryColor,
       fontSize: 16);
 
+  static const TextStyle headline4 = TextStyle(
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 10);
+
+  static const TextStyle subtitle1 = TextStyle(
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w300,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 17);
+
+  static const TextStyle subtitle2 = TextStyle(
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w300,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 11);
+
+  static const TextStyle subtitle3 = TextStyle(
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w300,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 9);
+
+  static const TextStyle bodyText1 = TextStyle(
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightSecondaryColor,
+      fontSize: 25);
+
   static const TextStyle buttonFull = TextStyle(
-    fontWeight: FontWeight.w600,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w500,
     color: AppColors.white,
     fontSize: 20,
   );
 
   static const TextStyle buttonEmpty = TextStyle(
-    //fontFamily: 'Lexend',
-    fontWeight: FontWeight.w600,
+    fontFamily: 'Roboto',
+    fontWeight: FontWeight.w500,
     color: AppColors.lightPrimaryColor,
     fontSize: 20,
   );

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
-import 'package:git/themes/dimension.dart';
 
 class MainTextField extends StatelessWidget {
   final String hint;
   final bool hasIcon;
   final String label;
 
-  MainTextField(this.hint, this.hasIcon,this.label, {Key? key}) : super(key: key);
+  const MainTextField(this.hint, this.hasIcon, this.label, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class MainTextField extends StatelessWidget {
           Expanded(
             child: TextFormField(
               initialValue: label,
-              style: lightTheme.headline6,
+              style: lightTheme.bodyText1,
               decoration: InputDecoration.collapsed(
                 hintText: hint,
               ),

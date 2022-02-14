@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:git/main.dart';
-import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/widgets/app_icon.dart';
+import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/category_item.dart';
-import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/main_container.dart';
 import 'package:git/widgets/main_text_field.dart';
-import 'package:git/widgets/text_side.dart';
 
 class CreateCategory extends StatefulWidget {
   const CreateCategory({Key? key}) : super(key: key);
@@ -35,7 +33,7 @@ class _CreateCategoryState extends State<CreateCategory> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: AppRadius.radius3,
+                    borderRadius: AppRadius.radius5,
                     color: AppColors.white,
                   ),
                   child: MainContainer(

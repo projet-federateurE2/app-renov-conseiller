@@ -1,4 +1,0 @@
-enum TextSide {
-  left,
-  right,
-}

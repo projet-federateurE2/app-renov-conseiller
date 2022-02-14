@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
+import 'package:git/themes/dimension.dart';
 
 class AppButtonEmpty extends StatelessWidget {
   final BoxShape boxShape;
@@ -7,7 +8,11 @@ class AppButtonEmpty extends StatelessWidget {
   final String text;
 
   const AppButtonEmpty(
-      {Key? key, required this.onPressed, this.boxShape = BoxShape.rectangle, required this.text}) : super(key: key);
+      {Key? key,
+      required this.onPressed,
+      this.boxShape = BoxShape.rectangle,
+      required this.text})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +22,10 @@ class AppButtonEmpty extends StatelessWidget {
         width: 348,
         height: 54,
         decoration: BoxDecoration(
-            border: Border.all(color: AppColors.lightPrimaryColor,width: 3.0),
-            shape: boxShape,
-            borderRadius: BorderRadius.circular(20),),
+          border: Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
+          shape: boxShape,
+          borderRadius: AppRadius.radius3,
+        ),
         child: Center(
           child: Text(
             text,
