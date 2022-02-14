@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:git/widgets/app_icon.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
+import 'package:git/widgets/app_icon.dart';
 
 class CategoryItem extends StatefulWidget {
   final String title;
@@ -12,11 +12,13 @@ class CategoryItem extends StatefulWidget {
   final bool selected;
 
   const CategoryItem(
-      {Key? key, required this.title,
+      {Key? key,
+      required this.title,
       required this.subtitle,
       this.onPressed,
       required this.icon,
-      required this.selected}) : super(key:key);
+      required this.selected})
+      : super(key: key);
 
   @override
   State<CategoryItem> createState() => _CategoryItemState();
@@ -44,7 +46,7 @@ class _CategoryItemState extends State<CategoryItem> {
         width: double.infinity,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: AppRadius.radius3,
+          borderRadius: AppRadius.radius2,
           color: _selected ? AppColors.lightPrimaryColorLight : AppColors.white,
         ),
         padding: AppPadding.padding5,
@@ -59,7 +61,7 @@ class _CategoryItemState extends State<CategoryItem> {
                   children: [
                     Text(
                       widget.title,
-                      style: lightTheme.headline4,
+                      style: lightTheme.headline2,
                     ),
                     const SizedBox(
                       height: 4,

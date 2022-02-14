@@ -2,15 +2,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/widgets/app_button_empty.dart';
 import 'package:git/widgets/app_icon.dart';
+import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/main_container.dart';
-import 'package:git/widgets/text_side.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import 'create.dart';
@@ -58,7 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
         icon: Icons.home,
         selected: true),
     const CategoryItem(
-        title: "Chauffage", subtitle: "Contient 4 sous-catégorie", icon: Icons.hot_tub, selected: false),
+        title: "Chauffage",
+        subtitle: "Contient 4 sous-catégorie",
+        icon: Icons.hot_tub,
+        selected: false),
   ];
 
   void addCategory() {
@@ -85,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ? Center(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: AppRadius.radius3,
+                        borderRadius: AppRadius.radius5,
                         color: AppColors.white,
                       ),
                       child: MainContainer(
@@ -100,6 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       margin: AppMargin.rightMargin2,
                                       child: const AppIcon(
                                         icon: Icons.home,
+                                        size: IconSize.big,
                                       )),
                                   Column(
                                     crossAxisAlignment:
@@ -137,7 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       margin: AppMargin.topMargin2,
                                       child: Text(
                                         catPitch,
-                                        style: lightTheme.headline6,
+                                        style: lightTheme.bodyText1,
                                       ),
                                     )
                                   ],
@@ -157,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       margin: AppMargin.topMargin2,
                                       child: Text(
                                         catDesc,
-                                        style: lightTheme.headline6,
+                                        style: lightTheme.bodyText1,
                                       ),
                                     )
                                   ],
@@ -267,7 +270,7 @@ class _MyHomePageState extends State<MyHomePage> {
           "Êtes vous sûr(e) de vouloir supprimer la \n catégorie \"${catName}\" ?",
       buttons: [
         DialogButton(
-          radius: AppRadius.radius1,
+          radius: AppRadius.radius2,
           width: 148,
           color: AppColors.white,
           onPressed: () {
@@ -278,9 +281,9 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 54,
             decoration: BoxDecoration(
               border:
-              Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
+                  Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
               shape: BoxShape.rectangle,
-              borderRadius: AppRadius.radius1,
+              borderRadius: AppRadius.radius2,
             ),
             child: const Center(
               child: Text(
@@ -291,7 +294,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         DialogButton(
-          radius: AppRadius.radius1,
+          radius: AppRadius.radius2,
           width: 148,
           color: AppColors.white,
           onPressed: () {
@@ -302,7 +305,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 54,
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
-                borderRadius: AppRadius.radius1,
+                borderRadius: AppRadius.radius2,
                 color: lightTheme.primaryColor),
             child: const Center(
               child: Text(
@@ -312,7 +315,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         )
-
       ],
     ).show();
   }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:git/widgets/app_icon.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
-import 'package:git/widgets/text_side.dart';
+import 'package:git/widgets/app_icon.dart';
 
 class FabText extends StatelessWidget {
   final String text;
@@ -12,10 +11,12 @@ class FabText extends StatelessWidget {
   final IconData icon;
 
   const FabText(
-      {Key? key, required this.text,
+      {Key? key,
+      required this.text,
       required this.textSide,
       this.onPressed,
-      required this.icon}) : super(key: key);
+      required this.icon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.leftPadding5,
                 child: Text(
                   text,
-                  style: lightTheme.headline5,
+                  style: lightTheme.headline2,
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -43,7 +44,7 @@ class FabText extends StatelessWidget {
       return Container(
         width: 350,
         padding: AppPadding.padding1,
-        margin: const EdgeInsets.fromLTRB(16.0, 0, 0, 0),
+        margin: AppMargin.leftMargin4,
         child: Row(
           children: [
             Expanded(
@@ -51,7 +52,7 @@ class FabText extends StatelessWidget {
                 padding: AppPadding.rightPadding5,
                 child: Text(
                   text,
-                  style: lightTheme.headline5,
+                  style: lightTheme.headline2,
                   textAlign: TextAlign.right,
                 ),
               ),
@@ -62,4 +63,9 @@ class FabText extends StatelessWidget {
       );
     }
   }
+}
+
+enum TextSide {
+  left,
+  right,
 }

@@ -59,7 +59,9 @@ abstract class AppMargin {
 }
 
 abstract class AppRadius {
-  static BorderRadius radius1 = BorderRadius.circular(16.0);
-  static BorderRadius radius2 = BorderRadius.circular(24.0);
-  static BorderRadius radius3 = BorderRadius.circular(40.0);
+  static BorderRadius radius1 = BorderRadius.circular(12.0);
+  static BorderRadius radius2 = BorderRadius.circular(16.0);
+  static BorderRadius radius3 = BorderRadius.circular(20.0);
+  static BorderRadius radius4 = BorderRadius.circular(24.0);
+  static BorderRadius radius5 = BorderRadius.circular(40.0);
 }
