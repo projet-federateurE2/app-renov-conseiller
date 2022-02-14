@@ -5,11 +5,13 @@ import 'package:flutter/rendering.dart';
 import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
+import 'package:git/widgets/app_button_empty.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/main_container.dart';
 import 'package:git/widgets/text_side.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import 'create.dart';
 
@@ -161,6 +163,27 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ],
                                 ),
                               ),
+                              Container(
+                                height: 230,
+                                margin: AppMargin.topMargin8,
+                                width: double.infinity,
+                                child: const Text(
+                                  "Liste des travaux se trouve ici....",
+                                  style: lightTheme.subtitle1,
+                                ),
+                              ),
+                              Container(
+                                  margin: AppMargin.topMargin8,
+                                  width: double.infinity,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      AppButtonEmpty(
+                                          onPressed: onAlertButtonsPressed,
+                                          text: "Supprimer la catégorie")
+                                    ],
+                                  )),
                             ],
                           ),
                         ),
@@ -234,5 +257,63 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
+  }
+
+// Alert with multiple and custom buttons
+  onAlertButtonsPressed() {
+    Alert(
+      context: context,
+      desc:
+          "Êtes vous sûr(e) de vouloir supprimer la \n catégorie \"${catName}\" ?",
+      buttons: [
+        DialogButton(
+          radius: AppRadius.radius1,
+          width: 148,
+          color: AppColors.white,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            width: double.infinity,
+            height: 54,
+            decoration: BoxDecoration(
+              border:
+              Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
+              shape: BoxShape.rectangle,
+              borderRadius: AppRadius.radius1,
+            ),
+            child: const Center(
+              child: Text(
+                'Garder',
+                style: lightTheme.buttonEmpty,
+              ),
+            ),
+          ),
+        ),
+        DialogButton(
+          radius: AppRadius.radius1,
+          width: 148,
+          color: AppColors.white,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            width: double.infinity,
+            height: 54,
+            decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: AppRadius.radius1,
+                color: lightTheme.primaryColor),
+            child: const Center(
+              child: Text(
+                'Supprimer',
+                style: lightTheme.buttonFull,
+              ),
+            ),
+          ),
+        )
+
+      ],
+    ).show();
   }
 }
