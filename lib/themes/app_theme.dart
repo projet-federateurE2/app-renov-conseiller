@@ -2,10 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const activeTheme = lightTheme;
+const activeTheme = AppLightTheme;
 
 // Thème clair
-abstract class lightTheme {
+abstract class AppLightTheme {
   static const Color bottomAppBarColor = AppColors.lightPrimaryColor;
   static const Color scaffoldBackgroundColor = AppColors.white;
   static const Color primaryColor = AppColors.lightPrimaryColor;

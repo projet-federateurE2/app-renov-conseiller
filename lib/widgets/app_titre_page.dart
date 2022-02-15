@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
+import 'package:git/themes/dimension.dart';
 
 class AppTitrePage extends StatelessWidget {
   final String titre1;
@@ -15,27 +16,27 @@ class AppTitrePage extends StatelessWidget {
       return Row(
         children: [
           Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+              margin: const EdgeInsets.fromLTRB(0, 0, AppDimens.m, 0),
               child: const Icon(Icons.arrow_back,
-                  color: AppColors.lightSecondaryColor, size: 35)),
-          Text(titre1, style: lightTheme.headline1)
+                  color: AppColors.lightSecondaryColor, size: AppDimens.l)),
+          Text(titre1, style: AppLightTheme.headline1)
         ],
       );
     } else if (titre3 == null) {
       return Row(
         children: [
           Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+              margin: const EdgeInsets.fromLTRB(0, 0, AppDimens.m, 0),
               child: const Icon(Icons.arrow_back,
-                  color: AppColors.lightSecondaryColor, size: 35)),
-          Text(titre1, style: lightTheme.headline1),
+                  color: AppColors.lightSecondaryColor, size: AppDimens.l)),
+          Text(titre1, style: AppLightTheme.headline1),
           Container(
-              margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              margin: const EdgeInsets.fromLTRB(AppDimens.l, 0, AppDimens.l, 0),
               child: const Icon(Icons.arrow_forward_ios,
-                  color: AppColors.lightSecondaryColor, size: 20)),
+                  color: AppColors.lightSecondaryColor, size: AppDimens.m)),
           Text(
             titre2!,
-            style: lightTheme.headline2,
+            style: AppLightTheme.headline2,
           )
         ],
       );
@@ -43,28 +44,28 @@ class AppTitrePage extends StatelessWidget {
       return Row(
         children: [
           Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+              margin: const EdgeInsets.fromLTRB(0, 0, AppDimens.m, 0),
               child: const Icon(Icons.arrow_back,
-                  color: AppColors.lightSecondaryColor, size: 35)),
+                  color: AppColors.lightSecondaryColor, size: AppDimens.l)),
           Text(
             titre1,
-            style: lightTheme.headline1,
+            style: AppLightTheme.headline1,
           ),
           Container(
-              margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              margin: const EdgeInsets.fromLTRB(AppDimens.l, 0, AppDimens.l, 0),
               child: const Icon(Icons.arrow_forward_ios,
-                  color: Color(0xff052948), size: 20)),
+                  color: Color(0xff052948), size: AppDimens.m)),
           Text(
             titre2!,
-            style: lightTheme.headline2,
+            style: AppLightTheme.headline2,
           ),
           Container(
-              margin: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+              margin: const EdgeInsets.fromLTRB(AppDimens.l, 0, AppDimens.l, 0),
               child: const Icon(Icons.arrow_forward_ios,
-                  color: AppColors.lightSecondaryColor, size: 20)),
+                  color: AppColors.lightSecondaryColor, size: AppDimens.m)),
           Text(
             titre3!,
-            style: lightTheme.headline3,
+            style: AppLightTheme.headline3,
           )
         ],
       );

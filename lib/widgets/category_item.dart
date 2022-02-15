@@ -43,32 +43,32 @@ class _CategoryItemState extends State<CategoryItem> {
         widget.onPressed;
       },
       child: Container(
-        width: double.infinity,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: AppRadius.radius2,
+          borderRadius: BorderRadius.circular(AppDimens.s),
           color: _selected ? AppColors.lightPrimaryColorLight : AppColors.white,
         ),
-        padding: AppPadding.padding5,
+        padding: const EdgeInsets.symmetric(horizontal: AppDimens.s),
+        margin: const EdgeInsets.only(bottom: AppDimens.xs),
         child: Row(
           children: [
             AppIcon(icon: widget.icon),
             Expanded(
               child: Padding(
-                padding: AppPadding.leftPadding5,
+                padding: const EdgeInsets.all(AppDimens.s),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       widget.title,
-                      style: lightTheme.headline2,
+                      style: AppLightTheme.headline2,
                     ),
                     const SizedBox(
-                      height: 4,
+                      height: AppDimens.xs,
                     ),
                     Text(
                       widget.subtitle,
-                      style: lightTheme.subtitle1,
+                      style: AppLightTheme.subtitle1,
                     ),
                   ],
                 ),

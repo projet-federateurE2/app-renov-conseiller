@@ -18,16 +18,18 @@ class AppIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double borderRadius = (size == IconSize.big) ? AppDimens.m : AppDimens.s;
+
     return GestureDetector(
       onTap: onPressed,
       child: Container(
         height: size.backgroundSize,
         width: size.backgroundSize,
-        padding: AppPadding.padding1,
+        padding: const EdgeInsets.all(AppDimens.xxs),
         decoration: BoxDecoration(
             shape: boxShape,
-            borderRadius: AppRadius.radius1,
-            color: lightTheme.primaryColor),
+            borderRadius: BorderRadius.circular(borderRadius),
+            color: AppLightTheme.primaryColor),
         child: Center(
           child: Icon(
             icon,
@@ -46,18 +48,18 @@ extension IconSizeExtension on IconSize {
   double get backgroundSize {
     switch (this) {
       case IconSize.big:
-        return 90;
+        return AppIconDimens.bigBackgroundSize;
       default:
-        return 72;
+        return AppIconDimens.mediumBackgroundSize;
     }
   }
 
   double get iconSize {
     switch (this) {
       case IconSize.big:
-        return 64;
+        return AppIconDimens.bigIconSize;
       default:
-        return 48;
+        return AppIconDimens.mediumIconSize;
     }
   }
 }
