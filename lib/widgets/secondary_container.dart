@@ -10,8 +10,8 @@ class SecondaryContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 10,
-      borderRadius: AppRadius.radius5,
+      elevation: AppDimens.s,
+      borderRadius: BorderRadius.circular(AppDimens.s),
       color: AppColors.white,
       child: SizedBox(
         height: 952,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
+import 'package:git/themes/dimension.dart';
 
 class MainTextField extends StatelessWidget {
   final String hint;
@@ -16,19 +17,19 @@ class MainTextField extends StatelessWidget {
       height: 64,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppDimens.m),
         color: AppColors.lightPrimaryColorLight,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(
-            width: 20,
+            width: AppDimens.m,
           ),
           Expanded(
             child: TextFormField(
               initialValue: label,
-              style: lightTheme.bodyText1,
+              style: AppLightTheme.bodyText1,
               decoration: InputDecoration.collapsed(
                 hintText: hint,
               ),

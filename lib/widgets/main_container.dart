@@ -14,12 +14,11 @@ class MainContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 10,
-      borderRadius: AppRadius.radius5,
+      elevation: AppDimens.s,
+      borderRadius: BorderRadius.circular(AppDimens.m),
       color: AppColors.white,
-      child: SizedBox(
-        height: 952,
-        width: 1288,
+      child: Padding(
+        padding: const EdgeInsets.all(AppDimens.l),
         child: content,
       ),
     );

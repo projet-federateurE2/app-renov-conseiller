@@ -22,17 +22,16 @@ class FabText extends StatelessWidget {
   Widget build(BuildContext context) {
     if (textSide == TextSide.right) {
       return Container(
-        width: 350,
-        padding: AppPadding.padding1,
+        padding: const EdgeInsets.all(AppDimens.xxs),
         child: Row(
           children: [
             AppIcon(onPressed: onPressed, icon: icon),
             Expanded(
               child: Padding(
-                padding: AppPadding.leftPadding5,
+                padding: const EdgeInsets.all(AppDimens.s),
                 child: Text(
                   text,
-                  style: lightTheme.headline2,
+                  style: AppLightTheme.headline2,
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -42,17 +41,16 @@ class FabText extends StatelessWidget {
       );
     } else {
       return Container(
-        width: 350,
-        padding: AppPadding.padding1,
-        margin: AppMargin.leftMargin4,
+        padding: const EdgeInsets.all(AppDimens.xxs),
+        margin: const EdgeInsets.all(AppDimens.xs),
         child: Row(
           children: [
             Expanded(
               child: Padding(
-                padding: AppPadding.rightPadding5,
+                padding: const EdgeInsets.all(AppDimens.s),
                 child: Text(
                   text,
-                  style: lightTheme.headline2,
+                  style: AppLightTheme.headline2,
                   textAlign: TextAlign.right,
                 ),
               ),

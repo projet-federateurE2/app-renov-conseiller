@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
-import 'package:git/widgets/app_button_empty.dart';
+import 'package:git/themes/string.dart';
+import 'package:git/widgets/app_button.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/category_item.dart';
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'App Renov Propriétaire',
+      title: AppStrings.appName,
       theme: ThemeData(fontFamily: 'Lexend'),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -79,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           const BackgroundGreenWave(),
           Container(
-            padding: const EdgeInsets.only(top: 32, right: 40, bottom: 228),
+            padding: const EdgeInsets.only(
+                top: AppDimens.l, right: AppDimens.xl, bottom: 228),
             margin: EdgeInsets.fromLTRB(
                 MediaQuery.of(context).size.width / 3, 0, 0, 0),
             height: MediaQuery.of(context).size.height,
@@ -87,123 +86,121 @@ class _MyHomePageState extends State<MyHomePage> {
                 ? Center(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: AppRadius.radius5,
+                        borderRadius: BorderRadius.circular(AppDimens.m),
                         color: AppColors.white,
                       ),
                       child: MainContainer(
-                        content: Container(
-                          padding: const EdgeInsets.only(
-                              left: 40, top: 32, right: 40, bottom: 32),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                      margin: AppMargin.rightMargin2,
-                                      child: const AppIcon(
-                                        icon: Icons.home,
-                                        size: IconSize.big,
-                                      )),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          padding: AppPadding.paddingHalf,
-                                          margin: AppMargin.topMargin4,
-                                          child: const Text(
-                                            "Nom",
-                                            style: lightTheme.subtitle1,
-                                          )),
-                                      Container(
-                                        padding: AppPadding.topPadding1,
-                                        child: Text(
-                                          catName,
-                                          style: lightTheme.headline1,
-                                        ),
+                        content: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                    margin: const EdgeInsets.all(AppDimens.xs),
+                                    child: const AppIcon(
+                                      icon: Icons.home,
+                                      size: IconSize.big,
+                                    )),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                        padding:
+                                            const EdgeInsets.all(AppDimens.xxs),
+                                        child: const Text(
+                                          AppStrings.name,
+                                          style: AppLightTheme.subtitle1,
+                                        )),
+                                    Container(
+                                      padding:
+                                          const EdgeInsets.all(AppDimens.xxs),
+                                      child: Text(
+                                        catName,
+                                        style: AppLightTheme.headline1,
                                       ),
-                                    ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(AppDimens.m),
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    AppStrings.pitch,
+                                    style: AppLightTheme.subtitle1,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(AppDimens.s),
+                                    child: Text(
+                                      catPitch,
+                                      style: AppLightTheme.bodyText1,
+                                    ),
                                   )
                                 ],
                               ),
-                              Container(
-                                margin: AppMargin.topMargin8,
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(AppDimens.l),
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    AppStrings.description,
+                                    style: AppLightTheme.subtitle1,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(AppDimens.xs),
+                                    child: Text(
+                                      catDesc,
+                                      style: AppLightTheme.bodyText1,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              height: 230,
+                              margin: const EdgeInsets.all(AppDimens.m),
+                              width: double.infinity,
+                              child: const Text(
+                                AppStrings.categoryWork,
+                                style: AppLightTheme.subtitle1,
+                              ),
+                            ),
+                            Container(
+                                margin: const EdgeInsets.all(AppDimens.l),
                                 width: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      "Pitch",
-                                      style: lightTheme.subtitle1,
-                                    ),
-                                    Container(
-                                      margin: AppMargin.topMargin2,
-                                      child: Text(
-                                        catPitch,
-                                        style: lightTheme.bodyText1,
-                                      ),
+                                    AppButton(
+                                      onPressed: onAlertButtonsPressed,
+                                      text: AppStrings.deleteCategory,
+                                      style: AppButtonStyle.outlined,
                                     )
                                   ],
-                                ),
-                              ),
-                              Container(
-                                margin: AppMargin.topMargin8,
-                                width: double.infinity,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      "Description",
-                                      style: lightTheme.subtitle1,
-                                    ),
-                                    Container(
-                                      margin: AppMargin.topMargin2,
-                                      child: Text(
-                                        catDesc,
-                                        style: lightTheme.bodyText1,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 230,
-                                margin: AppMargin.topMargin8,
-                                width: double.infinity,
-                                child: const Text(
-                                  "Liste des travaux se trouve ici....",
-                                  style: lightTheme.subtitle1,
-                                ),
-                              ),
-                              Container(
-                                  margin: AppMargin.topMargin8,
-                                  width: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      AppButtonEmpty(
-                                          onPressed: onAlertButtonsPressed,
-                                          text: "Supprimer la catégorie")
-                                    ],
-                                  )),
-                            ],
-                          ),
+                                )),
+                          ],
                         ),
                       ),
                     ),
                   )
                 : const Center(
                     child: Text(
-                      "Sélectionner un élément pour voir ses détails",
-                      style: lightTheme.headline1,
+                      AppStrings.selectElementToSeeMore,
+                      style: AppLightTheme.headline1,
                     ),
                   ),
           ),
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width / 3,
-            padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
+            padding: const EdgeInsets.fromLTRB(
+                AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
             child: Column(
               children: [
                 const Align(
@@ -217,13 +214,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 10,
                 ),
                 const Text(
-                  "Catégorie de travaux",
+                  AppStrings.categoryWork,
                   textAlign: TextAlign.center,
-                  style: lightTheme.headline1,
+                  style: AppLightTheme.headline1,
                   overflow: TextOverflow.clip,
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: AppDimens.xl,
                 ),
                 Expanded(
                   child: ListView.builder(
@@ -233,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       }),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: AppDimens.m,
                 ),
                 Container(
                   width: 260,
@@ -246,9 +243,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 10, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(
+                        AppDimens.s, AppDimens.s, 0, 0),
                     child: FabText(
-                        text: "Ajouter une nouvelle catégorie",
+                        text: AppStrings.addNewCategory,
                         textSide: TextSide.right,
                         onPressed: addCategory,
                         icon: Icons.add),
@@ -266,11 +264,10 @@ class _MyHomePageState extends State<MyHomePage> {
   onAlertButtonsPressed() {
     Alert(
       context: context,
-      desc:
-          "Êtes vous sûr(e) de vouloir supprimer la \n catégorie \"${catName}\" ?",
+      desc: "${AppStrings.areYouSureToDeleteCategory} \"$catName\" ?",
       buttons: [
         DialogButton(
-          radius: AppRadius.radius2,
+          radius: BorderRadius.circular(AppDimens.xxs),
           width: 148,
           color: AppColors.white,
           onPressed: () {
@@ -283,18 +280,18 @@ class _MyHomePageState extends State<MyHomePage> {
               border:
                   Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
               shape: BoxShape.rectangle,
-              borderRadius: AppRadius.radius2,
+              borderRadius: BorderRadius.circular(AppDimens.xxs),
             ),
             child: const Center(
               child: Text(
-                'Garder',
-                style: lightTheme.buttonEmpty,
+                AppStrings.cancel,
+                style: AppLightTheme.buttonEmpty,
               ),
             ),
           ),
         ),
         DialogButton(
-          radius: AppRadius.radius2,
+          radius: BorderRadius.circular(AppDimens.xs),
           width: 148,
           color: AppColors.white,
           onPressed: () {
@@ -305,12 +302,12 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 54,
             decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
-                borderRadius: AppRadius.radius2,
-                color: lightTheme.primaryColor),
+                borderRadius: BorderRadius.circular(AppDimens.xs),
+                color: AppLightTheme.primaryColor),
             child: const Center(
               child: Text(
-                'Supprimer',
-                style: lightTheme.buttonFull,
+                AppStrings.delete,
+                style: AppLightTheme.buttonFull,
               ),
             ),
           ),

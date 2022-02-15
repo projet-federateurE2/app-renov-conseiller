@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:git/main.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
+import 'package:git/themes/string.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/category_item.dart';
@@ -26,27 +26,31 @@ class _CreateCategoryState extends State<CreateCategory> {
         children: [
           const BackgroundGreenWave(),
           Container(
-              padding: const EdgeInsets.only(top: 32, right: 40, bottom: 228),
+              padding: const EdgeInsets.only(
+                  top: AppDimens.l, right: AppDimens.xl, bottom: 228),
               margin: EdgeInsets.fromLTRB(
                   MediaQuery.of(context).size.width / 3, 0, 0, 0),
               height: MediaQuery.of(context).size.height,
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: AppRadius.radius5,
+                    borderRadius: BorderRadius.circular(AppDimens.m),
                     color: AppColors.white,
                   ),
                   child: MainContainer(
                     content: Container(
                       padding: const EdgeInsets.only(
-                          left: 40, top: 32, right: 40, bottom: 32),
+                          left: AppDimens.xl,
+                          top: AppDimens.l,
+                          right: AppDimens.xl,
+                          bottom: AppDimens.l),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Row(
                             children: [
                               Container(
-                                margin: AppMargin.rightMargin2,
+                                margin: const EdgeInsets.all(AppDimens.xs),
                                 child: const AppIcon(
                                   icon: Icons.cloud_upload_outlined,
                                 ),
@@ -57,15 +61,16 @@ class _CreateCategoryState extends State<CreateCategory> {
                                     const Align(
                                       alignment: Alignment.topLeft,
                                       child: Text(
-                                        "Nom",
-                                        style: lightTheme.subtitle1,
+                                        AppStrings.name,
+                                        style: AppLightTheme.subtitle1,
                                       ),
                                     ),
                                     Container(
                                       width: double.infinity,
-                                      padding: AppPadding.topPadding1,
-                                      child: MainTextField(
-                                          "Ajouter un nom...", false, ""),
+                                      padding:
+                                          const EdgeInsets.all(AppDimens.xxs),
+                                      child: const MainTextField(
+                                          AppStrings.addName, false, ""),
                                     ),
                                   ],
                                 ),
@@ -73,7 +78,7 @@ class _CreateCategoryState extends State<CreateCategory> {
                             ],
                           ),
                           Container(
-                            margin: AppMargin.topMargin8,
+                            margin: const EdgeInsets.all(AppDimens.l),
                             width: double.infinity,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -81,21 +86,21 @@ class _CreateCategoryState extends State<CreateCategory> {
                                 const Align(
                                   alignment: Alignment.topLeft,
                                   child: Text(
-                                    "Pitch",
-                                    style: lightTheme.subtitle1,
+                                    AppStrings.pitch,
+                                    style: AppLightTheme.subtitle1,
                                   ),
                                 ),
                                 Container(
                                   width: double.infinity,
-                                  margin: AppMargin.topMargin2,
-                                  child: MainTextField(
-                                      "Ajouter un pitch...", false, ""),
+                                  margin: const EdgeInsets.all(AppDimens.xs),
+                                  child: const MainTextField(
+                                      AppStrings.addPitch, false, ""),
                                 ),
                               ],
                             ),
                           ),
                           Container(
-                            margin: AppMargin.topMargin8,
+                            margin: const EdgeInsets.all(AppDimens.l),
                             width: double.infinity,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -104,15 +109,15 @@ class _CreateCategoryState extends State<CreateCategory> {
                                 const Align(
                                   alignment: Alignment.topLeft,
                                   child: Text(
-                                    "Description",
-                                    style: lightTheme.subtitle1,
+                                    AppStrings.description,
+                                    style: AppLightTheme.subtitle1,
                                   ),
                                 ),
                                 Container(
                                   width: double.infinity,
-                                  margin: AppMargin.topMargin2,
-                                  child: MainTextField(
-                                      "Ajouter une description...", false, ""),
+                                  margin: const EdgeInsets.all(AppDimens.xs),
+                                  child: const MainTextField(
+                                      AppStrings.addDescription, false, ""),
                                 ),
                               ],
                             ),
@@ -126,7 +131,8 @@ class _CreateCategoryState extends State<CreateCategory> {
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width / 3,
-            padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
+            padding: const EdgeInsets.fromLTRB(
+                AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
             child: Column(
               children: [
                 Align(
@@ -144,22 +150,22 @@ class _CreateCategoryState extends State<CreateCategory> {
                         Icons.arrow_back,
                         size: 28.0,
                       ),
-                      label: Text("")),
+                      label: const Text("")),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 const Text(
-                  "Nouvelle catégorie",
+                  AppStrings.newCategory,
                   textAlign: TextAlign.center,
-                  style: lightTheme.headline1,
+                  style: AppLightTheme.headline1,
                   overflow: TextOverflow.clip,
                 ),
                 const SizedBox(
                   height: 40,
                 ),
                 const CategoryItem(
-                    title: "Présentation générale",
+                    title: AppStrings.generalPresentation,
                     subtitle: "",
                     icon: Icons.info_outline,
                     selected: true),
