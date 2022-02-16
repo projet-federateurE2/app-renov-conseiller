@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             Container(
-                              height: 230,
+                              height: 140,
                               margin: const EdgeInsets.all(AppDimens.m),
                               width: double.infinity,
                               child: const Text(
