@@ -11,6 +11,7 @@ import 'package:git/widgets/main_container.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import 'create.dart';
+import 'modif_categorie.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const CreateCategory()),
+    );
+  }
+
+  void handleModifButton(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ModifCaterogie()),
     );
   }
 
@@ -174,14 +182,22 @@ class _MyHomePageState extends State<MyHomePage> {
                             Container(
                                 margin: const EdgeInsets.all(AppDimens.l),
                                 width: double.infinity,
-                                child: Column(
+                                child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     AppButton(
                                       onPressed: onAlertButtonsPressed,
                                       text: AppStrings.deleteCategory,
                                       style: AppButtonStyle.outlined,
-                                    )
+                                    ),
+                                    Container(
+                                          padding:   EdgeInsets.only(left: MediaQuery.of(context).size.width/5.5),
+                                          child: AppButton(
+                                              text: AppStrings.modifCategory,
+                                              onPressed: handleModifButton,
+                                              style: AppButtonStyle.filled
+                                          )
+                                    ),
                                   ],
                                 )),
                           ],
