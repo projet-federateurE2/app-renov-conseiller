@@ -162,28 +162,33 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ],
                               ),
                             ),
-                            Container(
-                              height: 140,
-                              margin: const EdgeInsets.all(AppDimens.m),
-                              width: double.infinity,
-                              child: const Text(
-                                AppStrings.categoryWork,
-                                style: AppLightTheme.subtitle1,
+                            Expanded(
+                              child: Container(
+                                height: 140,
+                                margin: const EdgeInsets.all(AppDimens.m),
+                                width: double.infinity,
+                                child: const Text(
+                                  AppStrings.categoryWork,
+                                  style: AppLightTheme.subtitle1,
+                                ),
                               ),
                             ),
-                            Container(
-                                margin: const EdgeInsets.all(AppDimens.l),
-                                width: double.infinity,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    AppButton(
-                                      onPressed: onAlertButtonsPressed,
-                                      text: AppStrings.deleteCategory,
-                                      style: AppButtonStyle.outlined,
-                                    )
-                                  ],
-                                )),
+                            Expanded(
+                              child: Container(
+                                  margin: const EdgeInsets.all(AppDimens.l),
+                                  width: double.infinity,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      AppButton(
+                                        onPressed: onAlertButtonsPressed,
+                                        text: AppStrings.deleteCategory,
+                                        style: AppButtonStyle.outlined,
+                                      )
+                                    ],
+                                  )),
+                            ),
                           ],
                         ),
                       ),
