@@ -47,6 +47,8 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
     );
   }
 
+  late TextEditingController pitchController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,17 +93,91 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                       style: AppLightTheme.subtitle1,
                                     )),
                                 Container(
-                                  padding: const EdgeInsets.all(AppDimens.xxs),
-                                  child: Text(
-                                    catName,
-                                    style: AppLightTheme.headline1,
+                                  padding: const EdgeInsets.only(left: AppDimens.s),
+                                  margin: const EdgeInsets.all(AppDimens.m),
+                                  width: MediaQuery.of(context).size.width/AppModifDimens.resWidthModif,
+                                  height: MediaQuery.of(context).size.height/AppModifDimens.resHeightModif,
+                                  decoration: BoxDecoration(
+                                      color: AppColors.lightPrimaryColorLight ,
+                                      borderRadius: BorderRadius.circular(AppDimens.s)),
+                                  child: TextFormField(
+                                    //controller: pitchController,
+                                    decoration: InputDecoration(
+                                      enabledBorder: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                      fillColor: Colors.red,
+                                      border: OutlineInputBorder(),
+                                      labelText: catName,
+                                    ),
+                                    style: AppLightTheme.bodyText1,
                                   ),
                                 ),
                               ],
                             )
                           ],
                         ),
-
+                        Container(
+                          margin: const EdgeInsets.all(AppDimens.m),
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                AppStrings.pitch,
+                                style: AppLightTheme.subtitle1,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(left: AppDimens.s),
+                                decoration: BoxDecoration(
+                                  color: AppColors.lightPrimaryColorLight ,
+                                    borderRadius: BorderRadius.circular(AppDimens.s)),
+                                margin: const EdgeInsets.all(AppDimens.s),
+                                child: TextFormField(
+                                  //controller: pitchController,
+                                  decoration: InputDecoration(
+                                    enabledBorder: InputBorder.none,
+                                    focusedBorder: InputBorder.none,
+                                    fillColor: Colors.red,
+                                    border: OutlineInputBorder(),
+                                    labelText: catPitch,
+                                  ),
+                                  style: AppLightTheme.bodyText1,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(AppDimens.m),
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                AppStrings.description,
+                                style: AppLightTheme.subtitle1,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(left: AppDimens.s),
+                                decoration: BoxDecoration(
+                                    color: AppColors.lightPrimaryColorLight ,
+                                    borderRadius: BorderRadius.circular(AppDimens.s)),
+                                margin: const EdgeInsets.all(AppDimens.s),
+                                child: TextFormField(
+                                  //controller: pitchController,
+                                  decoration: InputDecoration(
+                                    enabledBorder: InputBorder.none,
+                                    focusedBorder: InputBorder.none,
+                                    fillColor: Colors.red,
+                                    border: OutlineInputBorder(),
+                                    labelText: catDesc,
+                                  ),
+                                  style: AppLightTheme.bodyText1,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

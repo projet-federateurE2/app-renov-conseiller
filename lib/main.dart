@@ -151,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                             Container(
-                              margin: const EdgeInsets.all(AppDimens.l),
+                              margin: const EdgeInsets.all(AppDimens.m),
                               width: double.infinity,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
