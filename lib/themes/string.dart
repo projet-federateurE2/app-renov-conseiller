@@ -11,6 +11,9 @@ abstract class AppStrings {
   static const generalPresentation = "Présentation générale";
   static const categoryWork = "Travaux de la catégorie";
   static const deleteCategory = "Supprimer la catégorie";
+  static const modifCategory = "Modifier la catégorie";
+  static const valider = "Valider";
+
   static const selectElementToSeeMore =
       "Sélectionner un élément pour voir ses détails";
   static const areYouSureToDeleteCategory =

@@ -12,7 +12,11 @@ import 'package:git/widgets/main_container.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'api/search_api_bloc.dart';
 import 'create.dart';
+
+import 'modif_categorie.dart';
+
 import 'model/category.dart';
+
 
 void main() {
   runApp(MultiBlocProvider(
@@ -76,7 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+
+  void handleModifButton(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ModifCaterogie()),
+    );
+  }
+
   late List<Category> categories;
+
 
   @override
   Widget build(BuildContext context) {
@@ -152,6 +165,24 @@ class _MyHomePageState extends State<MyHomePage> {
                                   )
                                 ],
                               ),
+
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(AppDimens.m),
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    AppStrings.description,
+                                    style: AppLightTheme.subtitle1,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(AppDimens.xs),
+                                    child: Text(
+                                      catDesc,
+                                      style: AppLightTheme.bodyText1,
+
                               Container(
                                 margin: const EdgeInsets.all(AppDimens.m),
                                 width: double.infinity,
@@ -161,6 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     const Text(
                                       AppStrings.pitch,
                                       style: AppLightTheme.subtitle1,
+
                                     ),
                                     Container(
                                       margin: const EdgeInsets.all(AppDimens.s),
@@ -175,9 +207,24 @@ class _MyHomePageState extends State<MyHomePage> {
                               Container(
                                 margin: const EdgeInsets.all(AppDimens.l),
                                 width: double.infinity,
-                                child: Column(
+                                child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
+
+                                    AppButton(
+                                      onPressed: onAlertButtonsPressed,
+                                      text: AppStrings.deleteCategory,
+                                      style: AppButtonStyle.outlined,
+                                    ),
+                                    Container(
+                                          padding:   EdgeInsets.only(left: MediaQuery.of(context).size.width/5.5),
+                                          child: AppButton(
+                                              text: AppStrings.modifCategory,
+                                              onPressed: handleModifButton,
+                                              style: AppButtonStyle.filled
+                                          )
+                                    ),
+
                                     const Text(
                                       AppStrings.description,
                                       style: AppLightTheme.subtitle1,
@@ -190,6 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         style: AppLightTheme.bodyText1,
                                       ),
                                     )
+
                                   ],
                                 ),
                               ),

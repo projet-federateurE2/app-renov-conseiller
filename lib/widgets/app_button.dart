@@ -20,7 +20,7 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     if (style == AppButtonStyle.filled) {
       return TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Container(
           width: 348,
           height: 54,

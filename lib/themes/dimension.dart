@@ -14,3 +14,9 @@ abstract class AppIconDimens {
   static const double bigIconSize = 64;
   static const double mediumIconSize = 48;
 }
+
+
+abstract class AppModifDimens {
+  static const double resWidthModif = 1.881;
+  static const double resHeightModif = 16;
+}
