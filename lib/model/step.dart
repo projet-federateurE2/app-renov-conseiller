@@ -1,7 +1,7 @@
 class Step {
   String name;
-  List<String> explanations;
-  List<String> subSteps;
+  List<dynamic> explanations;
+  List<dynamic> subSteps;
 
   Step(this.name, this.explanations, this.subSteps);
 }
