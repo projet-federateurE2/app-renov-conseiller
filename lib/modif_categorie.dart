@@ -159,6 +159,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                               ),
                               Container(
                                 padding: const EdgeInsets.only(left: AppDimens.s),
+                                height: MediaQuery.of(context).size.height/ AppDimens.xs,
                                 decoration: BoxDecoration(
                                     color: AppColors.lightPrimaryColorLight ,
                                     borderRadius: BorderRadius.circular(AppDimens.s)),
@@ -174,7 +175,16 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                   ),
                                   style: AppLightTheme.bodyText1,
                                 ),
-                              )
+                              ),
+                              Container(
+                                padding: const EdgeInsets.only(top: AppDimens.xxl),
+                                alignment: Alignment.topRight,
+                                child: AppButton(
+                                  onPressed: () {},
+                                  text: AppStrings.valider,
+                                  style: AppButtonStyle.filled,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -226,7 +236,6 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                 const SizedBox(
                   height: 20,
                 ),
-
               ],
             ),
           ),
