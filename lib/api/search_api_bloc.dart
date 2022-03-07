@@ -7,6 +7,9 @@ part 'search_api_state.dart';
 part 'search_api_event.dart';
 
 class SearchApiBloc extends Bloc<SearchApiEvent, SearchApiState> {
+
+  /// if we are in initial state we get all categories from te api
+  /// then we emit a resolved state with the categories
   SearchApiBloc() : super(const SearchApiInitialState()) {
     on<SearchDoQueryEvent>((event, emit) async {
       emit(const SearchApiLoadingState());
