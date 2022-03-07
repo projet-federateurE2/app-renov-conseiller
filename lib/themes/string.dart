@@ -7,6 +7,7 @@ abstract class AppStrings {
   static const description = "Description";
   static const addDescription = "Ajouter une description ...";
   static const newCategory = "Nouvelle catégorie";
+  static const newTravail = "Ajouter un travail";
   static const addNewCategory = "Nouvelle catégorie";
   static const generalPresentation = "Présentation générale";
   static const categoryWork = "Travaux de la catégorie";

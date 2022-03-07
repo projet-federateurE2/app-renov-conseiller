@@ -12,19 +12,18 @@ import 'package:git/widgets/list_item.dart';
 import 'package:git/widgets/main_container.dart';
 import 'package:git/widgets/main_text_field.dart';
 
-import 'add_travail.dart';
 import 'create.dart';
 import 'main.dart';
 
 
-class ModifCaterogie extends StatefulWidget {
-  const ModifCaterogie({Key? key}) : super(key: key);
+class AddTravail extends StatefulWidget {
+  const AddTravail({Key? key}) : super(key: key);
 
   @override
-  State<ModifCaterogie> createState() => _ModifCaterogieState();
+  State<AddTravail> createState() => _AddTravail();
 }
 
-class _ModifCaterogieState extends State<ModifCaterogie> {
+class _AddTravail extends State<AddTravail> {
   bool selected = true;
 
   String catName = "Isolation thermique";
@@ -41,10 +40,10 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
 
   ];
 
-  void addTravail() {
+  void addCategory() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const AddTravail()),
+      MaterialPageRoute(builder: (context) => const CreateCategory()),
     );
   }
 
@@ -130,7 +129,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                               Container(
                                 padding: const EdgeInsets.only(left: AppDimens.s),
                                 decoration: BoxDecoration(
-                                  color: AppColors.lightPrimaryColorLight ,
+                                    color: AppColors.lightPrimaryColorLight ,
                                     borderRadius: BorderRadius.circular(AppDimens.s)),
                                 margin: const EdgeInsets.all(AppDimens.s),
                                 child: TextFormField(
@@ -261,9 +260,9 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                     padding: const EdgeInsets.fromLTRB(
                         AppDimens.s, AppDimens.s, 0, 0),
                     child: FabText(
-                        text: AppStrings.newTravail,
+                        text: AppStrings.addNewCategory,
                         textSide: TextSide.right,
-                        onPressed: addTravail,
+                        onPressed: addCategory,
                         icon: Icons.add),
                   ),
                 ),
