@@ -17,6 +17,7 @@ abstract class AppStrings {
   static const deleteCategory = "Supprimer la catégorie";
   static const modifCategory = "Modifier la catégorie";
   static const valider = "Valider";
+  static const etapeNotExist = "Ce travail ne contient acunne étape";
 
   static const selectElementToSeeMore =
       "Sélectionner un élément pour voir ses détails";

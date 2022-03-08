@@ -9,6 +9,7 @@ import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/list_item.dart';
 import 'package:git/widgets/main_container.dart';import 'add_travail.dart';
+import 'main.dart';
 
 
 
@@ -44,7 +45,15 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
     );
   }
 
+  void goBack() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const MyApp()),
+    );
+  }
+
   late TextEditingController pitchController;
+
 
   @override
   Widget build(BuildContext context) {
@@ -204,11 +213,18 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
             padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
             child: Column(
               children: [
-                const Align(
+                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 28.0,
+                  child: TextButton(
+                    onPressed: () {
+                      goBack();
+                    },
+                    child: const Icon(
+                      Icons.arrow_back,
+                      size: 28.0,
+                      color: AppColors.darkPrimaryBackground,
+                    ),
+
                   ),
                 ),
                 const SizedBox(
