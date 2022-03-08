@@ -12,10 +12,15 @@ class apiRepository{
 
   /// We get the data from the api
   Future<List<Category>> doCategoryQuery() async {
-    String linkApi =
-        "https://app-ef3e460c-a183-4eb1-a1a6-ea2f0282e0cd.cleverapps.io/v1/projet/template";
 
-    var _res = await http.get(Uri.parse(linkApi));
+    String username = "apki_jvxpvDaujSJpsaKv";
+    String password = "apks_qm1ev8RX3Lc6dtyhh4TUhKKVWElsBwk8GcxXjD31589bukAzgqeElzQpGbAnSAX4";
+
+    String basicAuth = 'Basic ' + base64Encode(utf8.encode('$username:$password'));
+
+    String linkApi = 'https://equipe2.lp-cloud.tech/v1/projet/template';
+
+    var _res = await http.get(Uri.parse(linkApi),headers: <String,String>{'authorization': basicAuth});
     var _json = jsonDecode(_res.body);
     List<Category> _categoriesApi = [];
 
