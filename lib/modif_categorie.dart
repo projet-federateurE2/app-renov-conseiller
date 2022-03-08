@@ -6,15 +6,10 @@ import 'package:git/themes/string.dart';
 import 'package:git/widgets/app_button.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/background_green_wave.dart';
-import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/list_item.dart';
-import 'package:git/widgets/main_container.dart';
-import 'package:git/widgets/main_text_field.dart';
+import 'package:git/widgets/main_container.dart';import 'add_travail.dart';
 
-import 'add_travail.dart';
-import 'create.dart';
-import 'main.dart';
 
 
 class ModifCaterogie extends StatefulWidget {
@@ -130,7 +125,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                               Container(
                                 padding: const EdgeInsets.only(left: AppDimens.s),
                                 decoration: BoxDecoration(
-                                  color: AppColors.lightPrimaryColorLight ,
+                                    color: AppColors.lightPrimaryColorLight ,
                                     borderRadius: BorderRadius.circular(AppDimens.s)),
                                 margin: const EdgeInsets.all(AppDimens.s),
                                 child: TextFormField(

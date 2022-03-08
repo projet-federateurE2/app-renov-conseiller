@@ -6,14 +6,9 @@ import 'package:git/themes/string.dart';
 import 'package:git/widgets/app_button.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/background_green_wave.dart';
-import 'package:git/widgets/category_item.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/list_item.dart';
 import 'package:git/widgets/main_container.dart';
-import 'package:git/widgets/main_text_field.dart';
-
-import 'create.dart';
-import 'main.dart';
 
 
 class AddTravail extends StatefulWidget {
@@ -26,26 +21,13 @@ class AddTravail extends StatefulWidget {
 class _AddTravail extends State<AddTravail> {
   bool selected = true;
 
-  String catName = "Isolation thermique";
-  String catPitch =
-      "Pour faire des économies d’énergie, et améliorer votre confort en hiver comme en été.";
-  String catDesc =
-      "L’isolation de votre maison est primordiale. Une maison mal isolée est sujette à de sérieuses pertes énergétiques engendrant une perte de confort et d’argent.";
-
   var listItems = [
     const ListItem(
-        title: "Présentation générale",
-        icon: Icons.info,
+        title: AppStrings.addNewTravail,
+        icon: Icons.warning_amber,
         selected: true),
 
   ];
-
-  void addCategory() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const CreateCategory()),
-    );
-  }
 
   late TextEditingController pitchController;
 
@@ -73,121 +55,48 @@ class _AddTravail extends State<AddTravail> {
                   content: Container(
                     child: Column(
                       children: [
+                        Container(
+                            alignment: Alignment.topLeft,
+                            padding: const EdgeInsets.all(AppDimens.xxs),
+                            margin: const EdgeInsets.all(AppDimens.xxs),
+                            child: const Text(
+                              AppStrings.travauxName,
+                              style: AppLightTheme.headline1,
+                            )),
+
                         Row(
+                          crossAxisAlignment:
+                          CrossAxisAlignment.start,
                           children: [
                             Container(
                                 margin: const EdgeInsets.all(AppDimens.xs),
                                 child: const AppIcon(
-                                  icon: Icons.home,
+                                  icon: Icons.cloud_download_outlined ,
                                   size: IconSize.big,
                                 )),
-                            Column(
-                              crossAxisAlignment:
-                              CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                    padding: const EdgeInsets.all(AppDimens.xxs),
-                                    margin: const EdgeInsets.all(AppDimens.xxs),
-                                    child: const Text(
-                                      AppStrings.name,
-                                      style: AppLightTheme.subtitle1,
-                                    )),
-                                Container(
-                                  padding: const EdgeInsets.only(left: AppDimens.s),
-                                  margin: const EdgeInsets.all(AppDimens.m),
-                                  width: MediaQuery.of(context).size.width/AppModifDimens.resWidthModif,
-                                  height: MediaQuery.of(context).size.height/AppModifDimens.resHeightModif,
-                                  decoration: BoxDecoration(
-                                      color: AppColors.lightPrimaryColorLight ,
-                                      borderRadius: BorderRadius.circular(AppDimens.s)),
-                                  child: TextFormField(
-                                    //controller: pitchController,
-                                    decoration: InputDecoration(
-                                      enabledBorder: InputBorder.none,
-                                      focusedBorder: InputBorder.none,
-                                      fillColor: Colors.red,
-                                      border: OutlineInputBorder(),
-                                      labelText: catName,
-                                    ),
-                                    style: AppLightTheme.bodyText1,
-                                  ),
+                            Container(
+                              padding: const EdgeInsets.only(left: AppDimens.s),
+                              margin: const EdgeInsets.all(AppDimens.m),
+                              width: MediaQuery.of(context).size.width/AppModifDimens.resWidthModif,
+                              height: MediaQuery.of(context).size.height/AppModifDimens.resHeightModif,
+                              decoration: BoxDecoration(
+                                  color: AppColors.lightPrimaryColorLight ,
+                                  borderRadius: BorderRadius.circular(AppDimens.s)),
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                  enabledBorder: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  fillColor: Colors.red,
+                                  border: OutlineInputBorder(),
+                                  labelText: AppStrings.setNameTravail,
                                 ),
-                              ],
-                            )
+                                style: AppLightTheme.bodyText1,
+                              ),
+                            ),
                           ],
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(AppDimens.m),
-                          width: double.infinity,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                AppStrings.pitch,
-                                style: AppLightTheme.subtitle1,
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(left: AppDimens.s),
-                                decoration: BoxDecoration(
-                                    color: AppColors.lightPrimaryColorLight ,
-                                    borderRadius: BorderRadius.circular(AppDimens.s)),
-                                margin: const EdgeInsets.all(AppDimens.s),
-                                child: TextFormField(
-                                  //controller: pitchController,
-                                  decoration: InputDecoration(
-                                    enabledBorder: InputBorder.none,
-                                    focusedBorder: InputBorder.none,
-                                    fillColor: Colors.red,
-                                    border: OutlineInputBorder(),
-                                    labelText: catPitch,
-                                  ),
-                                  style: AppLightTheme.bodyText1,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(AppDimens.m),
-                          width: double.infinity,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                AppStrings.description,
-                                style: AppLightTheme.subtitle1,
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(left: AppDimens.s),
-                                height: MediaQuery.of(context).size.height/ AppDimens.xs,
-                                decoration: BoxDecoration(
-                                    color: AppColors.lightPrimaryColorLight ,
-                                    borderRadius: BorderRadius.circular(AppDimens.s)),
-                                margin: const EdgeInsets.all(AppDimens.s),
-                                child: TextFormField(
-                                  //controller: pitchController,
-                                  decoration: InputDecoration(
-                                    enabledBorder: InputBorder.none,
-                                    focusedBorder: InputBorder.none,
-                                    fillColor: Colors.red,
-                                    border: OutlineInputBorder(),
-                                    labelText: catDesc,
-                                  ),
-                                  style: AppLightTheme.bodyText1,
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(top: AppDimens.xxl),
-                                alignment: Alignment.topRight,
-                                child: AppButton(
-                                  onPressed: () {},
-                                  text: AppStrings.valider,
-                                  style: AppButtonStyle.filled,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+
+
                       ],
                     ),
                   ),
@@ -260,9 +169,9 @@ class _AddTravail extends State<AddTravail> {
                     padding: const EdgeInsets.fromLTRB(
                         AppDimens.s, AppDimens.s, 0, 0),
                     child: FabText(
-                        text: AppStrings.addNewCategory,
+                        text: AppStrings.newTravail,
                         textSide: TextSide.right,
-                        onPressed: addCategory,
+                        onPressed: () {},
                         icon: Icons.add),
                   ),
                 ),
