@@ -35,7 +35,6 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
         subTitle: "",
         icon: Icons.info,
         selected: true),
-
   ];
 
   void addTravail() {

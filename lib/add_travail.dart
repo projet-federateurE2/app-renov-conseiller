@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/themes/string.dart';
-import 'package:git/widgets/app_button.dart';
 import 'package:git/widgets/app_icon.dart';
 import 'package:git/widgets/background_green_wave.dart';
 import 'package:git/widgets/fab_text.dart';
 import 'package:git/widgets/list_item.dart';
 import 'package:git/widgets/main_container.dart';
+
+import 'modif_categorie.dart';
 
 
 class AddTravail extends StatefulWidget {
@@ -30,6 +31,13 @@ class _AddTravail extends State<AddTravail> {
   ];
 
   late TextEditingController pitchController;
+
+  void goBack() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ModifCaterogie()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,11 +124,15 @@ class _AddTravail extends State<AddTravail> {
             padding: const EdgeInsets.fromLTRB(56, 42, 62, 32),
             child: Column(
               children: [
-                const Align(
+                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 28.0,
+                  child: TextButton(
+                    onPressed: () {goBack();},
+                    child: const Icon(
+                      Icons.arrow_back,
+                      size: 28.0,
+                      color: AppColors.darkPrimaryBackground,
+                    ),
                   ),
                 ),
                 const SizedBox(

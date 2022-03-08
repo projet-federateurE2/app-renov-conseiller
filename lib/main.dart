@@ -257,11 +257,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
                   child: Column(
                     children: [
-                      const Align(
+                       Align(
                         alignment: Alignment.centerLeft,
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 28.0,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.arrow_back,
+                            size: 28.0,
+                            color: AppColors.darkPrimaryBackground,
+                          ),
                         ),
                       ),
                       const SizedBox(
