@@ -15,6 +15,7 @@ import 'create.dart';
 import 'model/category.dart';
 import 'modif_categorie.dart';
 
+// Main class, this class execute every time we run
 void main() {
   runApp(MultiBlocProvider(
       providers: [BlocProvider<SearchApiBloc>(create: (_) => SearchApiBloc())],
@@ -257,15 +258,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
                   child: Column(
                     children: [
-                       Align(
+                      const Align(
                         alignment: Alignment.centerLeft,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Icon(
-                            Icons.arrow_back,
-                            size: 28.0,
-                            color: AppColors.darkPrimaryBackground,
-                          ),
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 28.0,
                         ),
                       ),
                       const SizedBox(

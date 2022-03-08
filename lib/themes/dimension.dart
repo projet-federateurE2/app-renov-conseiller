@@ -1,3 +1,4 @@
+ // AppDimens class which allows to manage the size of different elements of the application
 abstract class AppDimens {
   static const double xxl = 56;
   static const double xl = 40;
@@ -8,6 +9,7 @@ abstract class AppDimens {
   static const double xxs = 4;
 }
 
+// AppIconDimens class which allows to manages the size of icons
 abstract class AppIconDimens {
   static const double bigBackgroundSize = 90;
   static const double mediumBackgroundSize = 72;
@@ -15,7 +17,7 @@ abstract class AppIconDimens {
   static const double mediumIconSize = 48;
 }
 
-
+// AppModifDimens class which allows to manages the width and height of category modification page
 abstract class AppModifDimens {
   static const double resWidthModif = 1.881;
   static const double resHeightModif = 16;

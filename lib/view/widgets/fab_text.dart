@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
-import 'package:git/widgets/app_icon.dart';
 
+import 'app_icon.dart';
+
+/*
+ * FabText widget witch allows to give a name for the floating action button
+ *
+ * @params text, textSide, onPressed, icon
+ */
 class FabText extends StatelessWidget {
   final String text;
   final TextSide textSide;
@@ -25,7 +31,10 @@ class FabText extends StatelessWidget {
         padding: const EdgeInsets.all(AppDimens.xxs),
         child: Row(
           children: [
-            AppIcon(onPressed: onPressed, icon: icon),
+            AppIcon(
+              onPressed: onPressed,
+              icon: icon,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(AppDimens.s),
@@ -55,7 +64,10 @@ class FabText extends StatelessWidget {
                 ),
               ),
             ),
-            AppIcon(onPressed: onPressed, icon: icon),
+            AppIcon(
+              onPressed: onPressed,
+              icon: icon,
+            ),
           ],
         ),
       );
@@ -63,6 +75,7 @@ class FabText extends StatelessWidget {
   }
 }
 
+// enumeration witch allows to specify if the text is in the right of the icon or in the left
 enum TextSide {
   left,
   right,

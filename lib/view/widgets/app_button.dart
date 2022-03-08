@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+/*
+ * AppButton widget witch allows to create a button
+ *
+ * @params boxShape, onPressed, text, style
+ */
 class AppButton extends StatelessWidget {
   final BoxShape boxShape;
   final Function()? onPressed;
@@ -27,7 +32,7 @@ class AppButton extends StatelessWidget {
           decoration: BoxDecoration(
               shape: boxShape,
               borderRadius: BorderRadius.circular(AppDimens.m),
-              color: AppLightTheme.primaryColor),
+              color: AppLightTheme.primaryColor,),
           child: Center(
             child: Text(
               text,

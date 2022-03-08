@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 const activeTheme = AppLightTheme;
 
-// Thème clair
+// AppLightTheme class which allows to have a clear theme and the different levels of title and subtitle
 abstract class AppLightTheme {
   static const Color bottomAppBarColor = AppColors.lightPrimaryColor;
   static const Color scaffoldBackgroundColor = AppColors.white;
@@ -73,8 +71,9 @@ abstract class AppLightTheme {
   );
 }
 
-// Couleurs des maquettes
+// AppColors class which allows to have the main colors of the application
 abstract class AppColors {
+  // Dark theme
   static const Color darkPrimaryBackground = Color(0xFF343A43);
   static const Color darkSecondaryBackground = Color(0xFF343A43);
   static const Color white = Color(0xFFFFFFFF);

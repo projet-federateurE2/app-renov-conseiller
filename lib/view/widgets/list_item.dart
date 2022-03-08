@@ -4,6 +4,13 @@ import 'package:git/widgets/app_icon.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+import 'app_icon.dart';
+
+/*
+ * ListItem class witch allows to select/unselect an item of the list
+ *
+ * @params title, onPressed, icon, selected
+ */
 class ListItem extends StatefulWidget {
   final String title;
   final String subTitle;
