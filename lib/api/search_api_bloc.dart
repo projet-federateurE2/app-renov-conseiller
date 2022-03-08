@@ -13,7 +13,7 @@ class SearchApiBloc extends Bloc<SearchApiEvent, SearchApiState> {
   SearchApiBloc() : super(const SearchApiInitialState()) {
     on<SearchDoQueryEvent>((event, emit) async {
       emit(const SearchApiLoadingState());
-      var categories = await apiRepository().doCategoryQuery();
+      var categories = await ApiRepository().doCategoryQuery();
       emit(SearchApiResolvedState(categories));
     });
   }

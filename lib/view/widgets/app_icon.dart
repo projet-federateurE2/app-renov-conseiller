@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+/*
+ * AppIcon widget witch allows to create an icon
+ *
+ * @params boxShape, onPressed, icon, size
+ */
 class AppIcon extends StatelessWidget {
   final BoxShape boxShape;
   final Function()? onPressed;
@@ -29,7 +34,7 @@ class AppIcon extends StatelessWidget {
         decoration: BoxDecoration(
             shape: boxShape,
             borderRadius: BorderRadius.circular(borderRadius),
-            color: AppLightTheme.primaryColor),
+            color: AppLightTheme.primaryColor,),
         child: Center(
           child: Icon(
             icon,

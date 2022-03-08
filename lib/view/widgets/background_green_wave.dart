@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// BackgroundGreenWave widget witch allows to make the green wave in background
 class BackgroundGreenWave extends StatelessWidget {
   const BackgroundGreenWave({Key? key}) : super(key: key);
 

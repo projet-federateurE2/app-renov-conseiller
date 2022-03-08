@@ -1,3 +1,4 @@
+// Step class that allows you to create a step
 class Step {
   String name;
   List<dynamic> explanations;
