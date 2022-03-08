@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:git/model/category.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/themes/string.dart';
@@ -9,7 +12,7 @@ import 'package:git/view/widgets/background_green_wave.dart';
 import 'package:git/view/widgets/fab_text.dart';
 import 'package:git/view/widgets/list_item.dart';
 import 'package:git/view/widgets/main_container.dart';
-
+import 'package:http/http.dart' as http;
 import '../../add_travail.dart';
 import '../../main.dart';
 
@@ -39,6 +42,10 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
         selected: true),
   ];
 
+  late String name;
+  late String pitch;
+  late String desc;
+
   void addTravail() {
     Navigator.push(
       context,
@@ -53,7 +60,32 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
     );
   }
 
-  late TextEditingController pitchController;
+  ///send a request to API to update a Categorie (id: 61e152da38b14edb61d48c09)
+  Future<Category> updateCategorie(String name, String desc, String pitch) async {
+    final response = await http.put(
+      Uri.parse('https://app-ef3e460c-a183-4eb1-a1a6-ea2f0282e0cd.cleverapps.io/v1/projet/template'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, dynamic>{
+        '_id': "61e152da38b14edb61d48c09",
+        'type': name,
+        'description': desc,
+        'pitch': pitch,
+        'travaux': [],
+      }),
+    );
+    ///If the request is successful -> return the object modified
+    if (response.statusCode == 200) {
+      return Category.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to update CATEGORIE.');
+    }
+  }
+
+  final nameController = TextEditingController();
+  final pitchController = TextEditingController();
+  final descController = TextEditingController();
 
 
   @override
@@ -108,7 +140,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                       color: AppColors.lightPrimaryColorLight ,
                                       borderRadius: BorderRadius.circular(AppDimens.s)),
                                   child: TextFormField(
-                                    //controller: pitchController,
+                                    controller: nameController,
                                     decoration: InputDecoration(
                                       enabledBorder: InputBorder.none,
                                       focusedBorder: InputBorder.none,
@@ -140,7 +172,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                     borderRadius: BorderRadius.circular(AppDimens.s)),
                                 margin: const EdgeInsets.all(AppDimens.s),
                                 child: TextFormField(
-                                  //controller: pitchController,
+                                  controller: pitchController,
                                   decoration: InputDecoration(
                                     enabledBorder: InputBorder.none,
                                     focusedBorder: InputBorder.none,
@@ -172,7 +204,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                     borderRadius: BorderRadius.circular(AppDimens.s)),
                                 margin: const EdgeInsets.all(AppDimens.s),
                                 child: TextFormField(
-                                  //controller: pitchController,
+                                  controller: descController,
                                   decoration: InputDecoration(
                                     enabledBorder: InputBorder.none,
                                     focusedBorder: InputBorder.none,
@@ -187,7 +219,14 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
                                 padding: const EdgeInsets.only(top: AppDimens.xxl),
                                 alignment: Alignment.topRight,
                                 child: AppButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      name = nameController.text;
+                                      pitch = pitchController.text;
+                                      desc = descController.text;
+                                    });
+                                    updateCategorie(name, pitch, desc);
+                                  },
                                   text: AppStrings.valider,
                                   style: AppButtonStyle.filled,
                                 ),

@@ -32,8 +32,8 @@ class ApiRepository{
       });
       _categoriesApi.add(Category(
           _json[i]["type"],
-          _json[i]["pitch"],
           _json[i]["description"],
+          _json[i]["pitch"],
           _listSteps
       ));
     }
