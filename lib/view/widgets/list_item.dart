@@ -12,17 +12,17 @@ import 'app_icon.dart';
  */
 class ListItem extends StatefulWidget {
   final String title;
+  final String subTitle;
   final Function()? onPressed;
   final IconData icon;
   final bool selected;
 
   const ListItem(
-      {Key? key,
-      required this.title,
-      this.onPressed,
-      required this.icon,
-      required this.selected})
-      : super(key: key);
+      {Key? key, required this.title,
+        this.onPressed,
+        required this.subTitle,
+        required this.icon,
+        required this.selected}) : super(key:key);
 
   @override
   State<ListItem> createState() => _ListItemState();
@@ -56,9 +56,7 @@ class _ListItemState extends State<ListItem> {
         margin: const EdgeInsets.only(bottom: AppDimens.xs),
         child: Row(
           children: [
-            AppIcon(
-              icon: widget.icon,
-            ),
+            AppIcon(icon: widget.icon),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(AppDimens.s),
@@ -69,6 +67,10 @@ class _ListItemState extends State<ListItem> {
                       widget.title,
                       style: AppLightTheme.headline2,
                     ),
+                    widget.subTitle != ""?Text(
+                      widget.subTitle,
+                      style: AppLightTheme.subtitle1,
+                    ):Container(),
                     const SizedBox(
                       height: AppDimens.l,
                     ),

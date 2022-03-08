@@ -63,6 +63,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool selected = true;
 
+  String catName = "Isolation thermique";
+  String catPitch =
+      "Pour faire des économies d’énergie, et améliorer votre confort en hiver comme en été.";
+  String catDesc =
+      "L’isolation de votre maison est primordiale. Une maison mal isolée est sujette à de sérieuses pertes énergétiques engendrant une perte de confort et d’argent.";
+
   var categoryItems = [];
 
   void addCategory() {
@@ -72,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void handleModifButton() {
+  void handleModifButton(){
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const ModifCaterogie()),
@@ -84,252 +90,238 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchApiBloc, SearchApiState>(
-      builder: (context, state) {
-        if (state is SearchApiResolvedState) {
-          categories = state.categories;
+        builder: (context, state) {
+          if (state is SearchApiResolvedState) {
+            categories = state.categories;
 
-          categoryItems.clear();
-          for (int i = 0; i < categories.length; i++) {
-            String subtitle = "Contient " +
-                categories[i].steps.length.toString() +
-                " travaux";
-            categoryItems.add(CategoryItem(
-              title: categories[i].name,
-              subtitle: subtitle,
-              icon: Icons.home,
-              selected: i == 0 ? true : false,
-            ));
+            categoryItems.clear();
+            for (int i = 0; i < categories.length; i++) {
+              String subtitle =
+                  "Contient " + categories[i].steps.length.toString() + " travaux";
+              categoryItems.add(
+                  CategoryItem(
+                      title: categories[i].name,
+                      subtitle: subtitle,
+                      icon: Icons.home,
+                      selected: i == 0 ? true : false)
+              );
+            }
           }
-        }
-        return Scaffold(
-          resizeToAvoidBottomInset: false,
-          backgroundColor: AppColors.white,
-          body: Stack(
-            children: [
-              const BackgroundGreenWave(),
-              Container(
-                padding: const EdgeInsets.only(
-                    top: AppDimens.l, right: AppDimens.xl, bottom: 228),
-                margin: EdgeInsets.fromLTRB(
-                    MediaQuery.of(context).size.width / 3, 0, 0, 0),
-                height: MediaQuery.of(context).size.height,
-                child: selected
-                    ? Center(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(AppDimens.m),
-                            color: AppColors.white,
-                          ),
-                          child: MainContainer(
-                            content: Column(
+          return Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.white,
+            body: Stack(
+              children: [
+                const BackgroundGreenWave(),
+                Container(
+                  padding: const EdgeInsets.only(
+                      top: AppDimens.l, right: AppDimens.xl, bottom: 228),
+                  margin: EdgeInsets.fromLTRB(
+                      MediaQuery.of(context).size.width / 3, 0, 0, 0),
+                  height: MediaQuery.of(context).size.height,
+                  child: selected
+                      ? Center(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(AppDimens.m),
+                        color: AppColors.white,
+                      ),
+                      child: MainContainer(
+                        content: Column(
+                          children: [
+                            Row(
                               children: [
-                                Row(
+                                Container(
+                                    margin:
+                                    const EdgeInsets.all(AppDimens.xs),
+                                    child: const AppIcon(
+                                      icon: Icons.home,
+                                      size: IconSize.big,
+                                    )),
+                                Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      margin:
-                                          const EdgeInsets.all(AppDimens.xs),
-                                      child: const AppIcon(
-                                        icon: Icons.home,
-                                        size: IconSize.big,
+                                        padding: const EdgeInsets.all(
+                                            AppDimens.xxs),
+                                        child: const Text(
+                                          AppStrings.name,
+                                          style: AppLightTheme.subtitle1,
+                                        )),
+                                    Container(
+                                      padding:
+                                      const EdgeInsets.all(AppDimens.xxs),
+                                      child: Text(
+                                        catName,
+                                        style: AppLightTheme.headline1,
                                       ),
                                     ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(
-                                              AppDimens.xxs),
-                                          child: const Text(
-                                            AppStrings.name,
-                                            style: AppLightTheme.subtitle1,
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.all(
-                                              AppDimens.xxs),
-                                          child: const Text(
-                                            AppStrings.catName,
-                                            style: AppLightTheme.headline1,
-                                          ),
-                                        ),
-                                      ],
-                                    )
                                   ],
-                                ),
-                                Container(
-                                  margin: const EdgeInsets.all(AppDimens.m),
-                                  width: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        AppStrings.pitch,
-                                        style: AppLightTheme.subtitle1,
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.all(AppDimens.s),
-                                        child: const Text(
-                                          AppStrings.catPitch,
-                                          style: AppLightTheme.bodyText1,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  margin: const EdgeInsets.all(AppDimens.l),
-                                  width: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Text(
-                                        AppStrings.description,
-                                        style: AppLightTheme.subtitle1,
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.all(AppDimens.xs),
-                                        child: const Text(
-                                          AppStrings.catDesc,
-                                          style: AppLightTheme.bodyText1,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    height: 140,
-                                    margin: const EdgeInsets.all(AppDimens.m),
-                                    width: double.infinity,
-                                    child: const Text(
-                                      AppStrings.categoryWork,
-                                      style: AppLightTheme.subtitle1,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    margin: const EdgeInsets.all(AppDimens.l),
-                                    width: double.infinity,
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        AppButton(
-                                          onPressed: onAlertButtonsPressed,
-                                          text: AppStrings.deleteCategory,
-                                          style: AppButtonStyle.outlined,
-                                        ),
-                                        Container(
-                                          padding: EdgeInsets.only(
-                                              left: MediaQuery.of(context)
-                                                      .size
-                                                      .width /
-                                                  5.5),
-                                          child: AppButton(
-                                            text: AppStrings.modifCategory,
-                                            onPressed: handleModifButton,
-                                            style: AppButtonStyle.filled,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                )
                               ],
                             ),
-                          ),
-                        ),
-                      )
-                    : const Center(
-                        child: Text(
-                          AppStrings.selectElementToSeeMore,
-                          style: AppLightTheme.headline1,
+                            Container(
+                              margin: const EdgeInsets.all(AppDimens.m),
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    AppStrings.pitch,
+                                    style: AppLightTheme.subtitle1,
+                                  ),
+                                  Container(
+                                    margin: const EdgeInsets.all(AppDimens.s),
+                                    child: Text(
+                                      catPitch,
+                                      style: AppLightTheme.bodyText1,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.all(AppDimens.l),
+                              width: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    AppStrings.description,
+                                    style: AppLightTheme.subtitle1,
+                                  ),
+                                  Container(
+                                    margin:
+                                    const EdgeInsets.all(AppDimens.xs),
+                                    child: Text(
+                                      catDesc,
+                                      style: AppLightTheme.bodyText1,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                height: 140,
+                                margin: const EdgeInsets.all(AppDimens.m),
+                                width: double.infinity,
+                                child: const Text(
+                                  AppStrings.categoryWork,
+                                  style: AppLightTheme.subtitle1,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                  margin: const EdgeInsets.all(AppDimens.l),
+                                  width: double.infinity,
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+
+                                      AppButton(
+                                        onPressed: onAlertButtonsPressed,
+                                        text: AppStrings.deleteCategory,
+                                        style: AppButtonStyle.outlined,
+                                      ),
+                                      Container(
+                                          padding:   EdgeInsets.only(left: MediaQuery.of(context).size.width/5.5),
+                                          child: AppButton(
+                                              text: AppStrings.modifCategory,
+                                              onPressed: handleModifButton,
+                                              style: AppButtonStyle.filled
+                                          )
+                                      ),
+
+
+                                    ],
+                                  ),),
+                            ),
+                          ],
                         ),
                       ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width / 3,
-                padding: const EdgeInsets.fromLTRB(
-                    AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
-                child: Column(
-                  children: [
-                    const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: 28.0,
-                      ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      AppStrings.categoryWork,
-                      textAlign: TextAlign.center,
+                  )
+                      : const Center(
+                    child: Text(
+                      AppStrings.selectElementToSeeMore,
                       style: AppLightTheme.headline1,
-                      overflow: TextOverflow.clip,
                     ),
-                    const SizedBox(
-                      height: AppDimens.xl,
-                    ),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: categoryItems.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return categoryItems[index];
-                        },
-                      ),
-                    ),
-                    const SizedBox(
-                      height: AppDimens.m,
-                    ),
-                    Container(
-                      width: 260,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: AppColors.grey1,
-                        ),
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(1),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(
-                            AppDimens.s, AppDimens.s, 0, 0),
-                        child: FabText(
-                          text: AppStrings.newCategory,
-                          textSide: TextSide.right,
-                          onPressed: addCategory,
-                          icon: Icons.add,
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width / 3,
+                  padding: const EdgeInsets.fromLTRB(
+                      AppDimens.xxl, AppDimens.xl, AppDimens.xxl, AppDimens.l),
+                  child: Column(
+                    children: [
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Icon(
+                          Icons.arrow_back,
+                          size: 28.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        AppStrings.categoryWork,
+                        textAlign: TextAlign.center,
+                        style: AppLightTheme.headline1,
+                        overflow: TextOverflow.clip,
+                      ),
+                      const SizedBox(
+                        height: AppDimens.xl,
+                      ),
+                      Expanded(
+                        child: ListView.builder(
+                            itemCount: categoryItems.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return categoryItems[index];
+                            }),
+                      ),
+                      const SizedBox(
+                        height: AppDimens.m,
+                      ),
+                      Container(
+                        width: 260,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppColors.grey1,
+                            ),
+                            borderRadius:
+                            const BorderRadius.all(Radius.circular(1))),
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                              AppDimens.s, AppDimens.s, 0, 0),
+                          child: FabText(
+                              text: AppStrings.addNewCategory,
+                              textSide: TextSide.right,
+                              onPressed: addCategory,
+                              icon: Icons.add),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          );
+        });
   }
 
 // Alert with multiple and custom buttons
   onAlertButtonsPressed() {
     Alert(
       context: context,
-      desc:
-          "${AppStrings.areYouSureToDeleteCategory} \"$AppStrings.catName\" ?",
+      desc: "${AppStrings.areYouSureToDeleteCategory} \"$catName\" ?",
       buttons: [
         DialogButton(
           radius: BorderRadius.circular(AppDimens.xxs),
@@ -342,10 +334,8 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             height: 54,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: AppColors.lightPrimaryColor,
-                width: 3.0,
-              ),
+              border:
+              Border.all(color: AppColors.lightPrimaryColor, width: 3.0),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(AppDimens.xxs),
             ),
@@ -368,10 +358,9 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             height: 54,
             decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(AppDimens.xs),
-              color: AppLightTheme.primaryColor,
-            ),
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(AppDimens.xs),
+                color: AppLightTheme.primaryColor),
             child: const Center(
               child: Text(
                 AppStrings.delete,
