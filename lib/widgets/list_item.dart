@@ -6,6 +6,7 @@ import 'package:git/themes/dimension.dart';
 
 class ListItem extends StatefulWidget {
   final String title;
+  final String subTitle;
   final Function()? onPressed;
   final IconData icon;
   final bool selected;
@@ -13,6 +14,7 @@ class ListItem extends StatefulWidget {
   const ListItem(
       {Key? key, required this.title,
         this.onPressed,
+        required this.subTitle,
         required this.icon,
         required this.selected}) : super(key:key);
 
@@ -59,6 +61,10 @@ class _ListItemState extends State<ListItem> {
                       widget.title,
                       style: AppLightTheme.headline2,
                     ),
+                    widget.subTitle != ""?Text(
+                      widget.subTitle,
+                      style: AppLightTheme.subtitle1,
+                    ):Container(),
                     const SizedBox(
                       height: AppDimens.l,
                     ),

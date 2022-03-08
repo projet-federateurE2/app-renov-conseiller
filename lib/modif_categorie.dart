@@ -31,6 +31,7 @@ class _ModifCaterogieState extends State<ModifCaterogie> {
   var listItems = [
     const ListItem(
         title: "Présentation générale",
+        subTitle: "",
         icon: Icons.info,
         selected: true),
 

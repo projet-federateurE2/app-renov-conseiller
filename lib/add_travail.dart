@@ -24,9 +24,9 @@ class _AddTravail extends State<AddTravail> {
   var listItems = [
     const ListItem(
         title: AppStrings.addNewTravail,
+        subTitle: "Ce travail ne contient acunne étape",
         icon: Icons.warning_amber,
         selected: true),
-
   ];
 
   late TextEditingController pitchController;
