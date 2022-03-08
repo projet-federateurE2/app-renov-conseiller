@@ -1,5 +1,6 @@
 import 'package:git/model/step.dart';
 
+// Category class witch allows to create a category
 class Category {
   String name;
   String pitch;

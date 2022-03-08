@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+/*
+ * SecondaryContainer widget witch allows to create the secondary container of a page like when we want to create
+ * a step or a task
+ *
+ * @params content
+ */
 class SecondaryContainer extends StatelessWidget {
   final Widget content;
 

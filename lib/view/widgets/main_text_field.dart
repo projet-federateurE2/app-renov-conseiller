@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+/*
+ * MainTextField widget witch allows to create a text zone
+ *
+ * @params hint, hasIcon, label
+ */
 class MainTextField extends StatelessWidget {
   final String hint;
   final bool hasIcon;

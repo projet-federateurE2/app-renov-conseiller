@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:git/widgets/app_icon.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 
+import 'app_icon.dart';
+
+/*
+ * ListItem class witch allows to select/unselect an item of the list
+ *
+ * @params title, onPressed, icon, selected
+ */
 class ListItem extends StatefulWidget {
   final String title;
   final Function()? onPressed;
@@ -11,10 +17,12 @@ class ListItem extends StatefulWidget {
   final bool selected;
 
   const ListItem(
-      {Key? key, required this.title,
-        this.onPressed,
-        required this.icon,
-        required this.selected}) : super(key:key);
+      {Key? key,
+      required this.title,
+      this.onPressed,
+      required this.icon,
+      required this.selected})
+      : super(key: key);
 
   @override
   State<ListItem> createState() => _ListItemState();
@@ -48,7 +56,9 @@ class _ListItemState extends State<ListItem> {
         margin: const EdgeInsets.only(bottom: AppDimens.xs),
         child: Row(
           children: [
-            AppIcon(icon: widget.icon),
+            AppIcon(
+              icon: widget.icon,
+            ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(AppDimens.s),

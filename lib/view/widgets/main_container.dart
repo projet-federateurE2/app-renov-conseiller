@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:git/themes/dimension.dart';
+import '../../themes/app_theme.dart';
 
-import '../themes/app_theme.dart';
 
+/*
+ * MainContainer widget witch allows to create the main container of a page
+ *
+ * @params content
+ */
 class MainContainer extends StatelessWidget {
   final Widget content;
 

@@ -3,12 +3,12 @@ import 'package:git/model/category.dart';
 import 'package:git/model/step.dart';
 import 'package:http/http.dart' as http;
 
-class apiRepository{
-  static final apiRepository _instance = apiRepository._internal();
+class ApiRepository{
+  static final ApiRepository _instance = ApiRepository._internal();
 
-  apiRepository._internal();
+  ApiRepository._internal();
 
-  factory apiRepository() => _instance;
+  factory ApiRepository() => _instance;
 
   /// We get the data from the api
   Future<List<Category>> doCategoryQuery() async {
