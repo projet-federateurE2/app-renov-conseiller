@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:git/themes/app_theme.dart';
 import 'package:git/themes/dimension.dart';
 import 'package:git/themes/string.dart';
-import 'package:git/widgets/app_button.dart';
-import 'package:git/widgets/app_icon.dart';
-import 'package:git/widgets/background_green_wave.dart';
-import 'package:git/widgets/category_item.dart';
-import 'package:git/widgets/fab_text.dart';
-import 'package:git/widgets/main_container.dart';
+import 'package:git/view/pages/create.dart';
+import 'package:git/view/pages/modif_categorie.dart';
+import 'package:git/view/widgets/app_button.dart';
+import 'package:git/view/widgets/app_icon.dart';
+import 'package:git/view/widgets/background_green_wave.dart';
+import 'package:git/view/widgets/category_item.dart';
+import 'package:git/view/widgets/fab_text.dart';
+import 'package:git/view/widgets/main_container.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'api/search_api_bloc.dart';
-import 'create.dart';
 import 'model/category.dart';
-import 'modif_categorie.dart';
 
 // Main class, this class execute every time we run
 void main() {
